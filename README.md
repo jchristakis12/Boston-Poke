@@ -15,10 +15,10 @@ So far we have thought to implement a superclass called Pokemon, where say Water
 1. Game Application
 
 # **Plan**
-
-Week 1: Psuedocode and Github groundwork 
-Week 2: Optimization 
-Week 3: Further optimization
+-Week 1-3
+1. Psuedocode and Github groundwork 
+2. Optimization 
+3. Further optimization
 
 # **Team Members**
 Joey Christakis Sid Men Frankie Guarino
