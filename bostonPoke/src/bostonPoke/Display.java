@@ -1,5 +1,9 @@
 package bostonPoke;
 
-public abstract class Display {
+public abstract interface Display {
+	
 
+		public void draw();
+		
+		
 }
