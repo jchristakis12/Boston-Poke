@@ -1,43 +1,50 @@
 package bostonPoke;
 
-import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Trainer implements Display {
 
-		private numMonsters;
+		private int numMonsters;
 		
 		private Monster[] monsters;
 		
-		private health;
+		public int health;
 		
-		public name[] = {"Frankie", "Sid", "Joey", "Kor", "Ash", "Bandit"};
+		public String[] nameList = {"Frankie", "Sid", "Joey", "Kor", "Ash", "Bandit"};
 		
-		private gender;
+		public String name = null;
+		
+		private boolean gender;
 		
 		//private heals = 1; monsters will heal
 		
 		public void Trainer(String[] name, int difficulty) {
-			double x = (Math.random()*((5)))+1;
-			this.name = name[x];
+			int nameIndex = ThreadLocalRandom.current().nextInt(0, 5 + 1);
+			this.name = nameList[nameIndex];
 			boolean gender = Math.random() < 0.5;
 			this.gender = gender;
 			this.numMonsters = 1;
-			setDifficult(difficulty);
+			this.numMonsters = setDifficult(difficulty);
+			
 		}
 		
 		
-		public void setDifficult(int perc) {
+		public int setDifficult(int perc) {
 			
-			this.numMonsters = this.numMonsters * perc;
+			return this.numMonsters * perc;
 			
 			
 		}
 		
 		public void whichMonsters(int numMonsters) {
 			monsters = new Monster[numMonsters]; 
-			int xRandom = (int) ((Math.random() * ((2))) +1);
-			for(int i = 0; i < monsters.length; i++) {
-				monsters[i] = new Monster(xRandom);
+			int whichMonster = ThreadLocalRandom.current().nextInt(0, 2 + 1);
+			if(whichMonster == 0) {
+				Monster[i] = new Monster()
+			}else if(whichMonster == 0) {
+				Monster[i] = new Monster
+			}else {
+				Monster[i] =new Monster()
 			}
 			
 			
