@@ -1,5 +1,8 @@
 package bostonPoke;
 
-public class Map {
+public class Map implements Display {
+	
+		
+	
 
 }
