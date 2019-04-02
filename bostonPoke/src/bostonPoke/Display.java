@@ -1,5 +1,11 @@
 package bostonPoke;
 
-public abstract class Display {
+import javafx.application.Application;
 
+public abstract interface Display {
+	
+
+		public void draw();
+		
+		
 }
