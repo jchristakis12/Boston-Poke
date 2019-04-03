@@ -2,7 +2,7 @@ package monsters;
 
 public class HomelessMan extends Humanoid {
 
-	public HomelessMan(String name) {
+	public HomelessMan() {
 		super("Homeless Man you saw last week and didn't give money to");
 		
 	}

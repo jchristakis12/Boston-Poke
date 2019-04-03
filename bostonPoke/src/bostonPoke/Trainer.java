@@ -2,7 +2,11 @@ package bostonPoke;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Trainer implements Display {
+
+import monsters.HomelessMan;
+import monsters.Monster;
+
+public class Trainer {
 
 		private int numMonsters;
 		
@@ -14,43 +18,42 @@ public class Trainer implements Display {
 		
 		public String name = null;
 		
-		private boolean gender;
+		private boolean isMale;
 		
-		//private heals = 1; monsters will heal
 		
-		public void Trainer(String[] name, int difficulty) {
+		public Trainer(String[] name, int difficulty,boolean isMale) {
 			int nameIndex = ThreadLocalRandom.current().nextInt(0, 5 + 1);
 			this.name = nameList[nameIndex];
 			boolean gender = Math.random() < 0.5;
-			this.gender = gender;
 			this.numMonsters = 1;
 			this.numMonsters = setDifficult(difficulty);
+			this.isMale = isMale;
 			
 		}
 		
 		
-		public int setDifficult(int perc) {
+		public int setDifficult(int difficulty) {
 			
-			return this.numMonsters * perc;
-			
+			return this.numMonsters * difficulty;	
 			
 		}
 		
 		public void whichMonsters(int numMonsters) {
-			monsters = new Monster[numMonsters]; 
+			Monster[] monsters = new Monster[numMonsters]; 
 			int whichMonster = ThreadLocalRandom.current().nextInt(0, 2 + 1);
+			for(int i = 0; i < numMonsters; i ++) {
+				
+			}
 			if(whichMonster == 0) {
-				Monster[i] = new Monster()
+				monsters[i] = new Geese();
 			}else if(whichMonster == 0) {
-				Monster[i] = new Monster
+				monsters[i] = new HomelessMan();
 			}else {
-				Monster[i] =new Monster()
+				monsters[i] =new Monster();
 			}
 			
 			
 			
 		}
-		
-		//Trainer Max = new Trainer("Max", 2)
 		
 }
