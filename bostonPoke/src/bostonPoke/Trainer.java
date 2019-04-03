@@ -39,12 +39,18 @@ public class Trainer implements Display {
 		public void whichMonsters(int numMonsters) {
 			monsters = new Monster[numMonsters]; 
 			int whichMonster = ThreadLocalRandom.current().nextInt(0, 2 + 1);
+			for(int i = 0; i < monsters.length; i++) {
 			if(whichMonster == 0) {
-				Monster[i] = new Monster()
-			}else if(whichMonster == 0) {
-				Monster[i] = new Monster
+				Monster[i] = new Monster();
+			}else if(whichMonster == 1) {
+				Monster[0] = new Monster();
+				Monster[1] = new Monster();
 			}else {
-				Monster[i] =new Monster()
+				Monster[0] =new Monster();
+				Monster[1] =new Monster();
+				Monster[2] =new Monster();
+			}
+			
 			}
 			
 			
