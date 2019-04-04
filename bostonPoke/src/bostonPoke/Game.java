@@ -14,7 +14,12 @@ public class Game extends Application implements Display {
 	
 	public Game() {
 		new Window(Width, Height, "Boston Poke", this);
+		
 	}
+	
+	
+	
+	
 	
 }
 	
