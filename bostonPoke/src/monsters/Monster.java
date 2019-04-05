@@ -39,7 +39,7 @@ public abstract class Monster {
 	public String getType() {
 		return type;
 	}
-	public boolean getStatus() {
+	public boolean isHealthy() {
 		if(health > 0) {
 			return true;
 		}else {

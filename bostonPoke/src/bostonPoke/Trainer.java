@@ -1,59 +1,72 @@
 package bostonPoke;
 
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.Random;
 
-
+import monsters.Geese;
 import monsters.HomelessMan;
 import monsters.Monster;
 
+@SuppressWarnings("unused")
 public class Trainer {
-
-		private int numMonsters;
 		
 		private Monster[] monsters;
 		
-		public int health;
+		private String[] nameList = {"Frankie", "Sid", "Joey", "Kor", "Ash", "Bandit"};
 		
-		public String[] nameList = {"Frankie", "Sid", "Joey", "Kor", "Ash", "Bandit"};
-		
-		public String name = null;
+		private String name;
 		
 		private boolean isMale;
 		
+		private String[] greetings = new String[5];
 		
-		public Trainer(String[] name, int difficulty,boolean isMale) {
-			int nameIndex = ThreadLocalRandom.current().nextInt(0, 5 + 1);
-			this.name = nameList[nameIndex];
-			boolean gender = Math.random() < 0.5;
-			this.numMonsters = 1;
-			this.numMonsters = setDifficult(difficulty);
-			this.isMale = isMale;
-			
-		}
+		private String[] loss = new String[5];
 		
-		
-		public int setDifficult(int difficulty) {
-			
-			return this.numMonsters * difficulty;	
-			
-		}
-		
-		public void whichMonsters(int numMonsters) {
-			Monster[] monsters = new Monster[numMonsters]; 
-			int whichMonster = ThreadLocalRandom.current().nextInt(0, 2 + 1);
-			for(int i = 0; i < numMonsters; i ++) {
+		private static Random rn = new Random();
 				
-			}
-			if(whichMonster == 0) {
-				monsters[i] = new Geese();
-			}else if(whichMonster == 0) {
-				monsters[i] = new HomelessMan();
-			}else {
-				monsters[i] =new Monster();
-			}
+		
+		
+		public Trainer(int difficulty,boolean isMale) {
 			
-			
+			this.name = selectName();
+			this.isMale = isMale;
+			monsters = new Monster[difficulty];
 			
 		}
+		
+		public String selectName() {
+			int name = rn.nextInt(6);
+			return nameList[name];
+		}
+		
+		public String Greeting() {
+			greetings[0] = "Hello challenger";
+			greetings[1] = "What's up nerd, let's battle";
+			greetings[2] = "*grunts profusely*";
+			greetings[3] = "Blessin the rains down in Africa";
+			greetings[4] = "Greetings traveler";
+			int greet = rn.nextInt(greetings.length);
+			return greetings[greet];
+		}
+		
+		public boolean isDefeated() {
+			for(int i = 0; i < monsters.length; i++) {
+				if(monsters[i].isHealthy() == true) {
+					return false;
+				}
+			}
+			return true;
+		}
+		
+		public String Lost() {
+			loss[0] = "I'll get you next time";
+			loss[1] = "Darn!";
+			loss[2] = "Unlucky!";
+			loss[3] = "I would've gotten away with it if it weren't for you meddling adults!";
+			loss[4] = "*cries*";
+			int iLoss = rn.nextInt(loss.length);
+			return loss[iLoss];
+		}
+		
+		
 		
 }
