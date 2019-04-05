@@ -15,15 +15,30 @@ import javafx.stage.Stage;
 import monsters.Monster;
 
 public class Battle {
+	//bottom left
+	String playerName;
+	Monster playerMonster;
+	Image show;
+	
+	//top right
+	String tName;
+	Monster[] tsMonster;
+	Monster monsterInUse;
+	Image showcased;
 	
 	
-	
+	Text pbar;
+	Text ebar;
 	
 	
 
 	
 	
+<<<<<<< HEAD
 	public void start(Stage primaryStage, Player Player, Trainer Trainer) throws Exception{
+=======
+	public void start(Stage primaryStage, Player Player, Trainer oponnent) throws Exception{
+>>>>>>> 148739caf80e98ee633464a74d35de36a6ac668b
 		
 		primaryStage.setTitle("Prudential Center");
 		
@@ -33,58 +48,15 @@ public class Battle {
 		
 		Text gym = new Text("First Floor"); //set position with fxml
 		
-		
-		
-		//some might be unneccesary, can call player methods for fx
-		//need these for display
-		Monster playerMonster = Player.getMonster();
-		String	playerName	=	Player.getName();
-		int health = playerMonster.getHealth();
-		int maxHp	= playerMonster.getMaxHealth();
-		
-		//probably uncessecary, need these for click on action methods
-		
-		
-		
-		//Now the trainer portion  of the battle screen
-		//trainer name
-		String tName = Trainer.getName();
-		//get current fighting monster
-		Monster[] tsMonster =  Trainer.getMonster();
-		Monster	monsterInUse=	Find(tsMonster);
-		//health bar
-		int eMax = monsterInUse.getMaxHealth();
-		int eHP = monsterInUse.getHealth();
-		//image, all of these must be updated per move when player finishes or hurts trainer monster
-		String imageView = monsterInUse.getUrl();
-		Image showcased = new Image(imageView);
-		
-		
-		
-		
-		//aren't updated so hardcode is fine
+		setPlayer();
+		setTrainer();
+
 		Button attack = new Button("Attack");
 		Button defend = new Button("Defense Up");
 		Button special = new Button("Special Attack");
 		Button heal = new Button("Heal");
-		//player hp/100 will use a method
-		Rectangle pHealth = new Rectangle();
-		pHealth.setStroke(Color.BLACK);
-		pHealth.setFill(Color.CORNFLOWERBLUE);
 		
 		
-		
-		//is always here, but the eStatus must be updated
-		Rectangle eHealth = new Rectangle();
-		eHealth.setStroke(Color.BLACK);
-		eHealth.setFill(Color.BROWN);
-		
-		//use toString method that is passed any type, but uses the T object to get max and current hp of either p or t
-		String pBar = Player.toString();
-		String eBar = Trainer.toString();
-		
-		Text pbar = new Text(pBar);
-		Text ebar = new Text(eBar);
 		
 		
 		
@@ -92,16 +64,70 @@ public class Battle {
 			
 			@Override
 			public void handle(MouseEvent click) {
-				monsterInUse = Find(tsMonster);
-				int previousHP = monsterInUse.getHealth();
-				int updateHealth = previousHP - playerMonster.getAttackDamage();
-				ebar = monsterInUse.toString();
-				setDisplay();				
+				
+				//use get methods for math
+				//then update the hbar string
+				int newHealth = monsterInUse.getHealth() - playerMonster.getAttackDMG();
+				if(newHealth <= 0) {
+					Switch(tsMonster);
+				}
+				monsterInUse.setMaxHealth(newHealth);
+				ebar = healthBar(monsterInUse);
+				
 			}
 		});
 		
+		defend.setOnMouseClicked(new EventHandler<MouseEvent>() {
+			
+			@Override
+			public void handle(MouseEvent click) {
+				
+				//use get methods for math
+				//then update the hbar string
+				int newHealth = monsterInUse.getHealth() - playerMonster.getAttackDMG();
+				if(newHealth <= 0) {
+					Switch(tsMonster);
+				}
+				monsterInUse.setMaxHealth(newHealth);
+				ebar = healthBar(monsterInUse);
+				
+			}
+		});
 		
+
+		special.setOnMouseClicked(new EventHandler<MouseEvent>() {
+			
+			@Override
+			public void handle(MouseEvent click) {
+				
+				//use get methods for math
+				//then update the hbar string
+				int newHealth = monsterInUse.getHealth() - playerMonster.getAttackDMG();
+				if(newHealth <= 0) {
+					Switch(tsMonster);
+				}
+				monsterInUse.setMaxHealth(newHealth);
+				ebar = healthBar(monsterInUse);
+				
+			}
+		});
 		
+		heal.setOnMouseClicked(new EventHandler<MouseEvent>() {
+			
+			@Override
+			public void handle(MouseEvent click) {
+				
+				//use get methods for math
+				//then update the hbar string
+				int newHealth = monsterInUse.getHealth() - playerMonster.getAttackDMG();
+				if(newHealth <= 0) {
+					Switch(tsMonster);
+				}
+				monsterInUse.setMaxHealth(newHealth);
+				ebar = healthBar(monsterInUse);
+				
+			}
+		});
 		
 		primaryStage.setScene(new Scene(p, 400, 225));
 		primaryStage.show();
@@ -126,14 +152,16 @@ public class Battle {
 	
 	public Monster Switch(Monster[] tsMonster) {
 		int counter = 0;
+		
 		for(int i = 0; i <= tsMonster.length; i++) {
-			if(tsMonster[i].getHealth() == 0) {
-				counter++;
-			}else {
+			
+			if(tsMonster[i].isHealthy()) {
 				return tsMonster[i];
 			}
+			
 		}
-		//call victory screen? exit battle screen? when counter == tlength?
+		
+		Text victory = new Text("YOU WON");
 		return null;
 	}
 	
@@ -144,6 +172,45 @@ public class Battle {
 		int y = o.getMaxHealth();
 		
 		return String.format("HP: %d / %d", x, y);
+	}
+	
+	public void setPlayer() {
+		playerName	=	Player.getName();	
+		
+		playerMonster = Player.getMonster();
+		
+		String player = playerMonster.getUrl();
+		show = new Image(player);
+		
+		
+		Rectangle pHealth = new Rectangle();
+		pHealth.setStroke(Color.BLACK);
+		pHealth.setFill(Color.CORNFLOWERBLUE);
+		
+		pbar = healthBar(playerMonster);
+	}
+	
+	
+	
+	public void setTrainer() {
+		tName = Trainer.getName();
+		
+		tsMonster =  Trainer.getMonster();
+		monsterInUse=	Find(tsMonster);
+		
+		ImageView imageView = monsterInUse.getUrl();
+		showcased = new Image(imageView);
+		
+		Rectangle eHealth = new Rectangle();
+		eHealth.setStroke(Color.BLACK);
+		eHealth.setFill(Color.BROWN);
+		
+		ebar = healthBar(monsterInUse);
+	}
+	
+	
+	public Text healthBar(Monster Monster) {
+		return String.format("HP: %d / %d", Monster.getHealth(), Monster.getMaxHealth());
 	}
 	
 
