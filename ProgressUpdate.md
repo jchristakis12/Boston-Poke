@@ -49,6 +49,21 @@
 
 ### Any blocking issues/challenges need to be addressed?
 * Main issues are the missing UI or anyway to test our program. We won't be able to see our game's major UI and coding flaws until we have a way to test the controls and actions of the game. Possibly creating a Test class for testing inputs could be implemented to ensure we don't have a buggy mess.
+
+
+## Week 4 (March 23 - March 29)
+
+### What did your team do last week?
+* We have been working on most of the code for the game and integrating them with one another. We are very close to completing most of the code for the game. Sid worked on finishing up trainer and player, Joey started working on the map on which the player will be moving around and interacting with other trainers. Frankie worked on the code for the battle scene. We are working together to integrate our codes into one anothers so they function correctly.
+
+...
+
+### What will you do this week?
+* Clean up and finish up our individual code and upload to github. We will then start working on the Game class which will compile all elements of our code together to get the game up and runnning. From there we will clean up code and start debugging enough for the game to run as intended. After that hopefully we will have enough time to start adding more game mechanics and balancing.
+...
+
+### Any blocking issues/challenges need to be addressed?
+* We are still runnning into problems with working with github but we are figuring it out as we go. In terms of code, we are only working on finishing each individual components by ourselves for now but expect to run into challenges when we try to integrate them together into the Game class. 
 ...
 
 ...
