@@ -51,7 +51,7 @@
 * Main issues are the missing UI or anyway to test our program. We won't be able to see our game's major UI and coding flaws until we have a way to test the controls and actions of the game. Possibly creating a Test class for testing inputs could be implemented to ensure we don't have a buggy mess.
 
 
-## Week 4 (March 23 - March 29)
+## Week 4 (April 1 - April 5)
 
 ### What did your team do last week?
 * We have been working on most of the code for the game and integrating them with one another. We are very close to completing most of the code for the game. Sid worked on finishing up trainer and player, Joey started working on the map on which the player will be moving around and interacting with other trainers. Frankie worked on the code for the battle scene. We are working together to integrate our codes into one anothers so they function correctly.
