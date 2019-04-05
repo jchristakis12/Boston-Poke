@@ -39,6 +39,10 @@ public abstract class Monster {
 	public String getType() {
 		return type;
 	}
+	public int getAttackDMG() {
+		return attackDMG;
+	}
+	
 	public boolean isHealthy() {
 		if(health > 0) {
 			return true;

@@ -67,6 +67,15 @@ public class Trainer {
 			return loss[iLoss];
 		}
 		
+		public String getName() {
+			return name;
+		}
+		
+		public Monster[] getMonster() {
+			return monsters;
+		}
+		
+		
 		
 		
 }

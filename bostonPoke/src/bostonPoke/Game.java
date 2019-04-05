@@ -1,5 +1,8 @@
 package bostonPoke;
 
+import javafx.application.Application;
+import javafx.stage.Stage;
+
 public class Game extends Application implements Display {
 	
 	
@@ -14,6 +17,12 @@ public class Game extends Application implements Display {
 	
 	public Game() {
 		new Window(Width, Height, "Boston Poke", this);
+	}
+
+	@Override
+	public void start(Stage arg0) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }
@@ -89,6 +98,5 @@ public class Game extends Application implements Display {
 	
 	
 	
-	***/
 
 
