@@ -22,3 +22,14 @@ So far we have thought to implement a superclass called Pokemon, where say Water
 
 # **Team Members**
 Joey Christakis Sid Men Frankie Guarino
+
+
+# **Getting Started**
+1. Install
+
+2. Run
+
+# **Features**
+
+# **Demo Video**
+
