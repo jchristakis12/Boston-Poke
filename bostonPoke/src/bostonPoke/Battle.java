@@ -34,11 +34,11 @@ public class Battle {
 
 	
 	
-<<<<<<< HEAD
+
 	public void start(Stage primaryStage, Player Player, Trainer Trainer) throws Exception{
-=======
+
 	public void start(Stage primaryStage, Player Player, Trainer oponnent) throws Exception{
->>>>>>> 148739caf80e98ee633464a74d35de36a6ac668b
+
 		
 		primaryStage.setTitle("Prudential Center");
 		
