@@ -22,21 +22,9 @@ import monsters.HomelessMan;
 import monsters.Humanoid;
 
 public class Game extends Application{
-	
-	int Width = 1000;
-	int Height = 800;
-	
-	@FXML
-	Button Theodore;
-	
-	@FXML
-	Button Womusk;
-	
-	@FXML
-	Button bigChungus;
+
 	
 	public static void main(String[] args) {
-		Map.main(args);
 
 		
 		Trainer Theodore = new Trainer(1, true);
@@ -59,15 +47,10 @@ public class Game extends Application{
 		bigChungus.setMonster(meatShield, 1);
 		bigChungus.setMonster(commuterRail, 2);
 		
+		launch(args);
 		
 		
 		
-		
-	}
-	
-	public Game() {
-		new Window(Width, Height, "Boston Poke", this);
-
 	}
 
 
@@ -119,18 +102,11 @@ public class Game extends Application{
 		pane.getChildren().addAll(mainChar,imgView8);
 		Scene mainMap = new Scene(pane, 1000,800);
 		Scene Yuur = new Scene(pane2,200,200);
-		primaryStage.setTitle("Boston Pokemon Map");
+		
+		primaryStage.setTitle("MAIN MAP");
 		primaryStage.setScene(mainMap);
-		primaryStage.setResizable(false);
 		primaryStage.show();
-		
 
-		Theodore.setOnMouseClicked(e->{
-			
-			setScene(setBattleScene1(), 1000, 800);
-			
-		});
-		
 
 		mainChar.requestFocus();
 		
@@ -141,15 +117,6 @@ public class Game extends Application{
 	};
 		
 		
-	
-	
-
-
-	@Override
-	public void draw() {
-		Stage pStage = new Stage();
-		
-	}
 	
 
 }

@@ -276,17 +276,6 @@ public class Map extends Application{
 		
 		imgView7.requestFocus();
 		
-<<<<<<< HEAD
-		//start of battle code
-		
-	
-=======
-		final FXMLLoader loader = new FXMLLoader(getClass().getResource("Battle.fxml"));
-		Pane p = loader.load();
-		Scene scene1 = new Scene(p, 1000,800);
-		
->>>>>>> d9977a9e35aecd883d8bc51562cde12cd91494e3
-		
 	}
 	
 	public static void main(String[] args) {

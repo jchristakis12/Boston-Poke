@@ -144,9 +144,6 @@ public class Map1 {
 		
 		
 		
-		
-		
-		
 		Image boss2 = new Image("https://vignette.wikia.nocookie.net/pokemon/images/2/29/Ingo.png/revision/latest?cb=20110225193531");
 		ImageView imgView15 = new ImageView(boss2);
 		imgView15.setLayoutX(450);
