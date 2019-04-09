@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
@@ -39,10 +40,10 @@ public class Battle extends Application {
 	Text ebar;
 	
 	
-	public void start(Stage primaryStage, Player Player, Trainer oponnent) throws Exception{
+	public GridPane getBattle(Player Player, Trainer oponnent) throws Exception{
 
 		
-		primaryStage.setTitle("Prudential Center");
+	//S	primaryStage.setTitle("Prudential Center");
 		
 	
 		GridPane p = new GridPane(); //easiest i think
@@ -55,9 +56,9 @@ public class Battle extends Application {
 
 		Button attack = new Button("Attack");
 		
-		Button defend = new Button("Defense Up");
-		Button special = new Button("Special Attack");
-		Button heal = new Button("Heal");
+		//Button defend = new Button("Defense Up");
+		//Button special = new Button("Special Attack");
+		//Button heal = new Button("Heal");
 		
 		
 		
@@ -100,8 +101,9 @@ public class Battle extends Application {
 		});
 		***/
 		p.getChildren().addAll(pName, pV, pHealth, pbar, t_Name, showcased, eHealth, ebar, attack);
-		primaryStage.setScene(new Scene(p, 400, 225));
-		primaryStage.show();
+		return p;
+		//primaryStage.setScene(new Scene(p, 400, 225));
+		//primaryStage.show();
 	
 
 }
@@ -189,12 +191,25 @@ public class Battle extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
+	/***
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		// TODO Auto-generated method stub
-		Player p1 = new Player("Jhn", "Attack Helicopter");
-		Trainer mark = new Trainer(1, true);
-		start(primaryStage, p1, mark);
+		//Player p1 = new Player("Jhn", "Attack Helicopter");
+		//Trainer mark = new Trainer(1, true);
+		//start(primaryStage, p1, mark);
+		
+		
+		GridPane p = getBattle(Player player, Trainer opponent);
+		Scene battle = new Scene(p, 1000, 800);
+		primaryStage.setScene(battle);
+		primaryStage.show();
+	}
+	***/
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 
 	
