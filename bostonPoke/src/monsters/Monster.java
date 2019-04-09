@@ -51,6 +51,7 @@ public abstract class Monster {
 		}
 	}
 	
+	
 	public void setMaxHealth(int health) {
 		maxHealth = health;
 	}

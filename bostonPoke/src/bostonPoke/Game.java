@@ -1,6 +1,7 @@
 package bostonPoke;
 
 import javafx.application.Application;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class Game extends Application implements Display {
@@ -11,8 +12,14 @@ public class Game extends Application implements Display {
 	private boolean running = false;
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		new Game();
+		Map.main(args);
+		
+		
+		Stage primaryStage = new Stage();
+		Map.start(primaryStage);
+		
+		
+		
 	}
 	
 	public Game() {
@@ -22,6 +29,11 @@ public class Game extends Application implements Display {
 	@Override
 	public void start(Stage arg0) throws Exception {
 		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void draw() {
+		Stage pStage = new Stage();
 		
 	}
 	

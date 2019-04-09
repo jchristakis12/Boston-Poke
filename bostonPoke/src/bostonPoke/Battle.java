@@ -30,12 +30,6 @@ public class Battle {
 	Text pbar;
 	Text ebar;
 	
-	
-
-	
-	
-
-	public void start(Stage primaryStage, Player Player, Trainer Trainer) throws Exception{
 
 	public void start(Stage primaryStage, Player Player, Trainer oponnent) throws Exception{
 
@@ -71,43 +65,10 @@ public class Battle {
 				if(newHealth <= 0) {
 					Switch(tsMonster);
 				}
-				monsterInUse.setMaxHealth(newHealth);
-				ebar = healthBar(monsterInUse);
+				monsterInUse.setHealth(newHealth);
+				setDisplay();
 				
-			}
-		});
-		
-		defend.setOnMouseClicked(new EventHandler<MouseEvent>() {
-			
-			@Override
-			public void handle(MouseEvent click) {
 				
-				//use get methods for math
-				//then update the hbar string
-				int newHealth = monsterInUse.getHealth() - playerMonster.getAttackDMG();
-				if(newHealth <= 0) {
-					Switch(tsMonster);
-				}
-				monsterInUse.setMaxHealth(newHealth);
-				ebar = healthBar(monsterInUse);
-				
-			}
-		});
-		
-
-		special.setOnMouseClicked(new EventHandler<MouseEvent>() {
-			
-			@Override
-			public void handle(MouseEvent click) {
-				
-				//use get methods for math
-				//then update the hbar string
-				int newHealth = monsterInUse.getHealth() - playerMonster.getAttackDMG();
-				if(newHealth <= 0) {
-					Switch(tsMonster);
-				}
-				monsterInUse.setMaxHealth(newHealth);
-				ebar = healthBar(monsterInUse);
 				
 			}
 		});
@@ -119,12 +80,11 @@ public class Battle {
 				
 				//use get methods for math
 				//then update the hbar string
-				int newHealth = monsterInUse.getHealth() - playerMonster.getAttackDMG();
-				if(newHealth <= 0) {
-					Switch(tsMonster);
+				int newHealth = playerMonster.getHealth() + playerMonster.getHeal();
+				if(newHealth <= playerMonster.getMaxHealth()) {
+					newHealth = playerMonster.getMaxHealth();
 				}
-				monsterInUse.setMaxHealth(newHealth);
-				ebar = healthBar(monsterInUse);
+				setDisplay();
 				
 			}
 		});
@@ -136,7 +96,8 @@ public class Battle {
 }
 	//updates battlescreen after each click
 	protected void setDisplay() {
-		
+		pbar = healthBar(playerMonster);
+		ebar = healthBar(monsterInUse);
 		
 	}
 
@@ -165,19 +126,13 @@ public class Battle {
 		return null;
 	}
 	
-	@Override
-	public String toString(T o) {
-		// x / y
-		int x = o.getHealth();
-		int y = o.getMaxHealth();
-		
-		return String.format("HP: %d / %d", x, y);
-	}
 	
 	public void setPlayer() {
-		playerName	=	Player.getName();	
+		Player player1 = new Player("John", "Attack Helicopter");
 		
-		playerMonster = Player.getMonster();
+		playerName	= player1.getName();	
+		
+		playerMonster = player1.getMonster();
 		
 		String player = playerMonster.getUrl();
 		show = new Image(player);
@@ -193,13 +148,16 @@ public class Battle {
 	
 	
 	public void setTrainer() {
+		Trainer Trainer = new Trainer(1, true);
 		tName = Trainer.getName();
 		
 		tsMonster =  Trainer.getMonster();
 		monsterInUse=	Find(tsMonster);
 		
-		ImageView imageView = monsterInUse.getUrl();
-		showcased = new Image(imageView);
+		String url = monsterInUse.getUrl();
+		Image image = new Image(url);
+		ImageView showcased = new ImageView(image);
+		
 		
 		Rectangle eHealth = new Rectangle();
 		eHealth.setStroke(Color.BLACK);
@@ -209,8 +167,8 @@ public class Battle {
 	}
 	
 	
-	public Text healthBar(Monster Monster) {
-		return String.format("HP: %d / %d", Monster.getHealth(), Monster.getMaxHealth());
+	public Text healthBar(Monster playerMonster2) {
+		return String.format("HP: %d / %d", playerMonster2.getHealth(), playerMonster2.getMaxHealth());
 	}
 	
 

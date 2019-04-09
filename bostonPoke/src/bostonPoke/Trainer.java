@@ -9,7 +9,7 @@ import monsters.Monster;
 @SuppressWarnings("unused")
 public class Trainer {
 		
-		private Monster[] monsters;
+		private static Monster[] monsters;
 		
 		private String[] nameList = {"Frankie", "Sid", "Joey", "Kor", "Ash", "Bandit"};
 		
@@ -71,7 +71,7 @@ public class Trainer {
 			return name;
 		}
 		
-		public Monster[] getMonster() {
+		public static Monster[] getMonster() {
 			return monsters;
 		}
 		
