@@ -1,5 +1,6 @@
 package bostonPoke;
 
+import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -14,23 +15,30 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import monsters.Monster;
 
-public class Battle {
+public class Battle extends Application {
 	//bottom left
 	String playerName;
+	Text pName;//shows
 	Monster playerMonster;
 	Image show;
+	ImageView pV;//shows
+	Rectangle pHealth;//shows
+	
 	
 	//top right
 	String tName;
+	Text t_Name;//shows
 	Monster[] tsMonster;
 	Monster monsterInUse;
-	Image showcased;
+	Image image;
+	ImageView showcased;//shows
+	Rectangle eHealth;
 	
 	
 	Text pbar;
 	Text ebar;
 	
-
+	
 	public void start(Stage primaryStage, Player Player, Trainer oponnent) throws Exception{
 
 		
@@ -46,6 +54,7 @@ public class Battle {
 		setTrainer();
 
 		Button attack = new Button("Attack");
+		
 		Button defend = new Button("Defense Up");
 		Button special = new Button("Special Attack");
 		Button heal = new Button("Heal");
@@ -61,18 +70,19 @@ public class Battle {
 				
 				//use get methods for math
 				//then update the hbar string
-				int newHealth = monsterInUse.getHealth() - playerMonster.getAttackDMG();
-				if(newHealth <= 0) {
-					Switch(tsMonster);
-				}
-				monsterInUse.setHealth(newHealth);
+				//int newHealth = monsterInUse.getHealth() - playerMonster.getAttackDMG();
+				//if(newHealth <= 0) {
+					//Switch(tsMonster);
+				//}
+				playerMonster.attack(monsterInUse);
+				//monsterInUse.setHealth(newHealth);
 				setDisplay();
 				
 				
 				
 			}
 		});
-		
+		/***
 		heal.setOnMouseClicked(new EventHandler<MouseEvent>() {
 			
 			@Override
@@ -88,7 +98,8 @@ public class Battle {
 				
 			}
 		});
-		
+		***/
+		p.getChildren().addAll(pName, pV, pHealth, pbar, t_Name, showcased, eHealth, ebar, attack);
 		primaryStage.setScene(new Scene(p, 400, 225));
 		primaryStage.show();
 	
@@ -104,10 +115,11 @@ public class Battle {
 	public Monster Find(Monster[] tsMonster) {
 		boolean found = false;
 		for(int i = 0; i <= tsMonster.length -1; i++) {
-			if(tsMonster[i].inUse) {
+			if(tsMonster[i].isHealthy()) {
 				return tsMonster[i];
 			}
 		}
+		return null;
 	}
 	
 	
@@ -130,19 +142,21 @@ public class Battle {
 	public void setPlayer() {
 		Player player1 = new Player("John", "Attack Helicopter");
 		
-		playerName	= player1.getName();	
+		playerName	= player1.getName();
+		Text pName = new Text(playerName);//player name
 		
 		playerMonster = player1.getMonster();
 		
 		String player = playerMonster.getURL();
 		show = new Image(player);
+		ImageView pV = new ImageView(show); //imageview of monster
 		
 		
-		Rectangle pHealth = new Rectangle();
+		Rectangle pHealth = new Rectangle(); //health bar
 		pHealth.setStroke(Color.BLACK);
 		pHealth.setFill(Color.CORNFLOWERBLUE);
 		
-		pbar = healthBar(playerMonster);
+		pbar = healthBar(playerMonster); //health bar text
 	}
 	
 	
@@ -150,16 +164,17 @@ public class Battle {
 	public void setTrainer() {
 		Trainer mark = new Trainer(1, true);
 		tName = mark.getName();
+		t_Name = new Text(tName);
 		
 		tsMonster =  mark.getMonster();
 		monsterInUse=	Find(tsMonster);
 		
 		String url = monsterInUse.getURL();
 		Image image = new Image(url);
-		ImageView showcased = new ImageView(image);
+		showcased = new ImageView(image);
 		
 		
-		Rectangle eHealth = new Rectangle();
+		eHealth = new Rectangle();
 		eHealth.setStroke(Color.BLACK);
 		eHealth.setFill(Color.BROWN);
 		
@@ -170,6 +185,19 @@ public class Battle {
 	public Text healthBar(Monster playerMonster2) {
 		return new Text (String.format("HP: %d / %d", playerMonster2.getHealth(), playerMonster2.getMaxHealth()));
 	}
+	
+	public static void main(String[] args) {
+		launch(args);
+	}
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		// TODO Auto-generated method stub
+		Player p1 = new Player("Jhn", "Attack Helicopter");
+		Trainer mark = new Trainer(1, true);
+		start(primaryStage, p1, mark);
+	}
+
+	
 	
 
 }

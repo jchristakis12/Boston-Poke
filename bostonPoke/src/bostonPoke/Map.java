@@ -274,6 +274,8 @@ public class Map extends Application{
 		
 		imgView7.requestFocus();
 		
+		//start of battle code
+		
 	
 		
 	}

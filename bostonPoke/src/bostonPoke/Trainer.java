@@ -75,6 +75,10 @@ public class Trainer {
 			return monsters;
 		}
 		
+		public void setMonster(Monster monster, int index) {
+			monsters[index] = monster;
+		}
+		
 		
 		
 		
