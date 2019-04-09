@@ -276,6 +276,10 @@ public class Map extends Application{
 		
 		imgView7.requestFocus();
 		
+<<<<<<< HEAD
+=======
+
+>>>>>>> 98244720310468f04c9ca6f4eeb67fae128e9de2
 	}
 	
 	public static void main(String[] args) {

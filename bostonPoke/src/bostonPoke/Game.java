@@ -47,10 +47,7 @@ public class Game extends Application{
 		bigChungus.setMonster(commuterRail, 2);
 		
 		launch(args);
-		
-		
-	}
-
+	}		
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -105,10 +102,14 @@ public class Game extends Application{
 		primaryStage.setScene(mainMap);
 		primaryStage.show();
 
+
 		mainChar.requestFocus();
 
 		imgView8.setOnMouseClicked(e -> primaryStage.setScene(Yuur));
 		btn.setOnMouseClicked(e -> primaryStage.setScene(mainMap));
+
+
+		mainChar.requestFocus();
 
 		
 	};
