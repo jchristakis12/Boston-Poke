@@ -134,7 +134,7 @@ public class Battle {
 		
 		playerMonster = player1.getMonster();
 		
-		String player = playerMonster.getUrl();
+		String player = playerMonster.getURL();
 		show = new Image(player);
 		
 		
@@ -148,13 +148,13 @@ public class Battle {
 	
 	
 	public void setTrainer() {
-		Trainer Trainer = new Trainer(1, true);
-		tName = Trainer.getName();
+		Trainer mark = new Trainer(1, true);
+		tName = mark.getName();
 		
-		tsMonster =  Trainer.getMonster();
+		tsMonster =  mark.getMonster();
 		monsterInUse=	Find(tsMonster);
 		
-		String url = monsterInUse.getUrl();
+		String url = monsterInUse.getURL();
 		Image image = new Image(url);
 		ImageView showcased = new ImageView(image);
 		
@@ -168,7 +168,7 @@ public class Battle {
 	
 	
 	public Text healthBar(Monster playerMonster2) {
-		return String.format("HP: %d / %d", playerMonster2.getHealth(), playerMonster2.getMaxHealth());
+		return new Text (String.format("HP: %d / %d", playerMonster2.getHealth(), playerMonster2.getMaxHealth()));
 	}
 	
 

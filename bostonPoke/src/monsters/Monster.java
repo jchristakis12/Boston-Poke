@@ -42,6 +42,9 @@ public abstract class Monster {
 	public int getAttackDMG() {
 		return attackDMG;
 	}
+	public int getMaxHealth() {
+		return maxHealth;
+	}
 	
 	public boolean isHealthy() {
 		if(health > 0) {
@@ -79,5 +82,7 @@ public abstract class Monster {
 	public abstract void attack(Monster opponent);		
 	
 	public abstract void levelUP();	
+	
+	public abstract String getURL();
 	
 }

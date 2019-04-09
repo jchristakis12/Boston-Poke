@@ -14,4 +14,9 @@ public class HomelessMan extends Humanoid {
 		
 	}
 	
+	@Override
+	public String getURL() {
+		return "https://c8.alamy.com/comp/BBK8W7/close-up-portrait-of-a-homeless-guy-with-a-cigarette-on-his-nose-brixton-BBK8W7.jpg";
+	}
+	
 }
