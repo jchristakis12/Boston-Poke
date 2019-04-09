@@ -42,6 +42,9 @@ public abstract class Monster {
 	public int getAttackDMG() {
 		return attackDMG;
 	}
+	public int getMaxHealth() {
+		return maxHealth;
+	}
 	
 	public boolean isHealthy() {
 		if(health > 0) {

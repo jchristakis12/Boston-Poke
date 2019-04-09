@@ -30,12 +30,7 @@ public class Battle {
 	Text pbar;
 	Text ebar;
 	
-	
 
-	
-	
-
-	public void start(Stage primaryStage, Player Player, Trainer Trainer) throws Exception{
 
 	public void start(Stage primaryStage, Player Player, Trainer oponnent) throws Exception{
 
