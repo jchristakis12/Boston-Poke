@@ -11,4 +11,6 @@ public abstract interface Display {
 		void start(Stage primaryStage) throws Exception;
 		
 		
+		
+		
 }

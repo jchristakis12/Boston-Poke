@@ -8,7 +8,7 @@ import monsters.Monster;
 public class Player {
 	
 	private String name, gender;
-	private static Monster[] monster = new Monster[1];
+	private static Monster monster;
 
 	public Player(String name, String gender) {
 		this.name = name;
@@ -23,17 +23,17 @@ public class Player {
 		return gender;
 	}
 	
-	public Monster[] getMonster() {
+	public Monster getMonster() {
 		return monster;
 	}
 	
 	public static void selectMonster(int choice) {
 		if(choice == 0) {
-			monster[0] = new HomelessMan();
+			monster = new HomelessMan();
 		}else if(choice == 1) {
-			monster[0] = new Geese();
+			monster = new Geese();
 		}else if(choice == 2) {
-			monster[0] = new GreenLine();
+			monster= new GreenLine();
 		}
 	}
 	
