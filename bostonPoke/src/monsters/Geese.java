@@ -11,5 +11,10 @@ public class Geese extends Nature {
 		this.setMaxHealth(125);
 		this.setAttackDMG(20);
 	}
+	
+	@Override
+	public String getURL() {
+		return "https://www.boston.com/wp-content/uploads/2014/04/05212011_0521oped_goose_jpg-7937585-800x478.jpg";
+	}
 
 }
