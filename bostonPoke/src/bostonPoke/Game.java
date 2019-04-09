@@ -23,7 +23,6 @@ import monsters.Humanoid;
 
 public class Game extends Application{
 
-	
 	public static void main(String[] args) {
 
 		
@@ -48,7 +47,6 @@ public class Game extends Application{
 		bigChungus.setMonster(commuterRail, 2);
 		
 		launch(args);
-		
 		
 		
 	}
@@ -107,17 +105,15 @@ public class Game extends Application{
 		primaryStage.setScene(mainMap);
 		primaryStage.show();
 
-
 		mainChar.requestFocus();
-		
+
 		imgView8.setOnMouseClicked(e -> primaryStage.setScene(Yuur));
 		btn.setOnMouseClicked(e -> primaryStage.setScene(mainMap));
-		
+
 		
 	};
 		
 		
-	
 
 }
 	
