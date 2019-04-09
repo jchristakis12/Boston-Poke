@@ -14,10 +14,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
-<<<<<<< HEAD
-=======
 import javafx.scene.shape.Rectangle;
->>>>>>> 8d340ae943487bbf87d3e812bcf2553d7a67e74e
 import javafx.stage.Stage;
 import monsters.Geese;
 import monsters.GreenLine;
@@ -79,11 +76,6 @@ public class Game extends Application{
 		
 	}
 	
-	public Game() {
-		new Window(Width, Height, "Boston Poke", this);
-
-	}
-
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -139,20 +131,8 @@ public class Game extends Application{
 		primaryStage.show();
 		
 
-		Theodore.setOnMouseClicked(e->{
-			
-			setScene(Battle1.getBattle(tester, opponent), 1000, 800);
-			
-		});
-		
 
 		mainChar.requestFocus();
-		
-<<<<<<< HEAD
-=======
-		imgView8.setOnMouseClicked(e -> primaryStage.setScene(Yuur));
-		btn.setOnMouseClicked(e -> primaryStage.setScene(mainMap));
->>>>>>> 8d340ae943487bbf87d3e812bcf2553d7a67e74e
 		
 		
 	};

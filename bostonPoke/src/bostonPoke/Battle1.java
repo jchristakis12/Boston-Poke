@@ -59,11 +59,6 @@ public class Battle1 {
 		
 		
 		
-		
-		//FXMLLoader loader = new FXMLLoader(getClass().getResource("Battle.fxml"));
-		//Pane p = loader.load();
-		//Scene scene1 = new Scene(p, 1000,800);
-		
 		p.getChildren().addAll(pName, pV, pHealth, pbar, t_Name, showcased, eHealth, ebar, attack);
 		return p;
 		
