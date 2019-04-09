@@ -9,7 +9,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import monsters.Geese;
 import monsters.GreenLine;
@@ -29,6 +31,11 @@ public class Game extends Application{
 	
 	@FXML
 	Button bigChungus;
+	
+	@FXML
+	Pane battle;
+	
+	
 	
 	public static void main(String[] args) {
 		Map.main(args);
@@ -55,6 +62,12 @@ public class Game extends Application{
 		bigChungus.setMonster(commuterRail, 2);
 		
 		
+		
+		Player tester = new Player("HOI", "APACHE HELICOPTER");
+		
+		
+		Pane battle = Battle1.getBattle(tester, Theodore);
+
 		
 		
 		
@@ -110,12 +123,14 @@ public class Game extends Application{
 
 		Theodore.setOnMouseClicked(e->{
 			
-			setScene(setBattleScene1(), 1000, 800);
+			setScene(Battle1.getBattle(tester, opponent), 1000, 800);
 			
 		});
 		
 
 		mainChar.requestFocus();
+		
+		
 		
 	};
 		
@@ -124,12 +139,6 @@ public class Game extends Application{
 	
 
 
-	@Override
-	public void draw() {
-		Stage pStage = new Stage();
-		
-	}
-	
 
 }
 	

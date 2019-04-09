@@ -57,19 +57,7 @@ public class Battle1 {
 		
 		Button attack = new Button("Attack");
 		
-		attack.setOnMouseClicked(new EventHandler<MouseEvent>() {
-			
-			@Override
-			public void handle(MouseEvent click) {
-				
-				playerMonster.attack(monsterInUse);
-				
-				setDisplay();
-				
-				
-				
-			}
-		});
+		
 		
 		
 		//FXMLLoader loader = new FXMLLoader(getClass().getResource("Battle.fxml"));
@@ -139,6 +127,10 @@ public class Battle1 {
 	
 	public static Text healthBar(Monster playerMonster2) {
 		return new Text (String.format("HP: %d / %d", playerMonster2.getHealth(), playerMonster2.getMaxHealth()));
+	}
+	
+	public Button getButton() {
+		return attack;
 	}
 	
 
