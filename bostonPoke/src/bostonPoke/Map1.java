@@ -2,6 +2,7 @@ package bostonPoke;
 
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -43,6 +44,9 @@ public class Map1 {
 		Rectangle wall5 = new Rectangle(10,400, 10, 400);
 		wall5.setLayoutX(250);
 		wall5.setLayoutY(-400);
+		
+		
+	
 		
 		
 		Image img1 = new Image("https://vignette.wikia.nocookie.net/family-guy-the-quest-for-stuff/images/4/47/Deco-flower-bush.png/revision/latest?cb=20140617165144");
@@ -94,13 +98,6 @@ public class Map1 {
 		//pane.getChildren().add(new ImageView(img6));
 		
 		
-		
-		Image boss1 = new Image("https://vignette.wikia.nocookie.net/dreamworks/images/5/52/8260c358617564297ca30c4dbbef7c26.jpg/revision/latest?cb=20190302123446");
-		ImageView imgView8 = new ImageView(boss1);
-		imgView8.setLayoutX(425);
-		imgView8.setLayoutY(100);
-		imgView8.setFitHeight(100);
-		imgView8.setFitWidth(100);
 		
 		
 		Image b1_bush = new Image("https://vignette.wikia.nocookie.net/family-guy-the-quest-for-stuff/images/4/47/Deco-flower-bush.png/revision/latest?cb=20140617165144");
@@ -224,7 +221,7 @@ public class Map1 {
 		
 		
 		
-		pane.getChildren().addAll( imgView1, imgView2, imgView3, imgView4, imgView5, imgView6, door, wall1, wall2, wall3, wall4, wall5, imgView8, imgView9, imgView10, imgView11, imgView12, imgView13, imgView14, imgView15, imgView16, imgView17, imgView18, imgView19, imgView20, imgView22, imgView23);
+		pane.getChildren().addAll( imgView1, imgView2, imgView3, imgView4, imgView5, imgView6, door, wall1, wall2, wall3, wall4, wall5, imgView9, imgView10, imgView11, imgView12, imgView13, imgView14, imgView15, imgView16, imgView17, imgView18, imgView19, imgView20, imgView22, imgView23);
 		
 		return pane;
 		

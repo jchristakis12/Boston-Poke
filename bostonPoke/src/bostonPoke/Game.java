@@ -2,12 +2,17 @@ package bostonPoke;
 
 import javafx.application.Application;
 import javafx.event.EventHandler;
+import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class Game extends Application{
@@ -16,7 +21,15 @@ public class Game extends Application{
 	public void start(Stage primaryStage) throws Exception {
 		
 		BorderPane pane = Map1.getMap();
+		Pane pane2 = new Pane();
 		
+		Image boss1 = new Image("https://vignette.wikia.nocookie.net/dreamworks/images/5/52/8260c358617564297ca30c4dbbef7c26.jpg/revision/latest?cb=20190302123446");
+		ImageView imgView8 = new ImageView(boss1);
+		imgView8.setLayoutX(425);
+		imgView8.setLayoutY(100);
+		imgView8.setFitHeight(100);
+		imgView8.setFitWidth(100);
+				
 		
 		Image character = new Image("https://vignette.wikia.nocookie.net/pokemon/images/7/7a/VS_Red_SM.png/revision/latest?cb=20170101032644");
 		ImageView mainChar = new ImageView(character);
@@ -24,6 +37,7 @@ public class Game extends Application{
 		mainChar.setLayoutY(750);
 		mainChar.setFitHeight(70);
 		mainChar.setFitWidth(100);
+		
 		
 		mainChar.setOnKeyPressed(new EventHandler<KeyEvent>() {
 		
@@ -45,15 +59,22 @@ public class Game extends Application{
 				}
 			}
 		}); 
-		
-		pane.getChildren().add(mainChar);
+		Button btn = new Button();
+		btn.setText("GO BACK!");
+		pane2.getChildren().add(btn);
+		pane.getChildren().addAll(mainChar,imgView8);
 		Scene mainMap = new Scene(pane, 1000,800);
+		Scene Yuur = new Scene(pane2,200,200);
 		primaryStage.setTitle("Boston Pokemon Map");
 		primaryStage.setScene(mainMap);
 		primaryStage.setResizable(false);
 		primaryStage.show();
 		
 		mainChar.requestFocus();
+		
+		imgView8.setOnMouseClicked(e -> primaryStage.setScene(Yuur));
+		btn.setOnMouseClicked(e -> primaryStage.setScene(mainMap));
+		
 		
 	};
 		
