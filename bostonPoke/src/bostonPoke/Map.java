@@ -2,19 +2,21 @@ package bostonPoke;
 
 import javafx.application.Application;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 public class Map extends Application{
 	
 	@Override	
-	public void start(Stage primaryStage) {
+	public void start(Stage primaryStage) throws Exception{
 		
 		
 		
@@ -274,7 +276,10 @@ public class Map extends Application{
 		
 		imgView7.requestFocus();
 		
-	
+		final FXMLLoader loader = new FXMLLoader(getClass().getResource("Battle.fxml"));
+		Pane p = loader.load();
+		Scene scene1 = new Scene(p, 1000,800);
+		
 		
 	}
 	
