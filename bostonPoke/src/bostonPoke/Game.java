@@ -55,6 +55,8 @@ public class Game extends Application{
 		Player player = new Player(playerName, playerGender);
 		
 		launch(args);
+		
+		System.out.print(playerGender);
 	}		
 
 	@Override
@@ -121,7 +123,7 @@ public class Game extends Application{
 		
 		TextField enterName = new TextField(); 
 		((GridPane) startS).add(enterName, 3, 2);
-		Text Gender = new Text("Gender:");
+		TextField Gender = new TextField();
 		((GridPane) startS).add(Gender, 2, 4);
 
 		
@@ -131,7 +133,9 @@ public class Game extends Application{
 			playerGender = Gender.getText();
 			primaryStage.setScene(mainMap);
 		});
+		
 		imgView8.setOnMouseClicked(e -> primaryStage.setScene(Yuur));
+		
 		btn.setOnMouseClicked(e -> primaryStage.setScene(mainMap));
 
 

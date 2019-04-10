@@ -26,14 +26,12 @@ public class Start extends Application {
 		
 		Text Name = new Text("Name:");
 		p.add(Name, 2, 2);
-		TextField enterName = new TextField(); 
-		p.add(enterName, 3, 2);
+		
 		
 		Text Gender = new Text("Gender:");
 		p.add(Gender, 2, 4);
 		
-		TextField enterGender = new TextField();
-		p.add(enterGender, 3, 4);
+		
 		
 		
 		
