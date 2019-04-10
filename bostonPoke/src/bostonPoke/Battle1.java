@@ -18,8 +18,6 @@ import monsters.Monster;
 
 public class Battle1 {
 	
-	@FXML
-	Button attack;
 	
 	static String playerName;
 	static Text pName;//shows
@@ -55,11 +53,13 @@ public class Battle1 {
 		setPlayer(player);
 		setTrainer(opponent);
 		
-		Button attack = new Button("Attack");
+		Button attack = new Button("Attack");//i guess this isn't needed idk 
+		attack.setOnMouseClicked(e->{
+			playerMonster.attack(monsterInUse);
+		});
 		
 		
-		
-		p.getChildren().addAll(pName, pV, pHealth, pbar, t_Name, showcased, eHealth, ebar, attack);
+		p.getChildren().addAll(pName, pV, pHealth, pbar, t_Name, showcased, eHealth, ebar);
 		return p;
 		
 	}
@@ -124,9 +124,7 @@ public class Battle1 {
 		return new Text (String.format("HP: %d / %d", playerMonster2.getHealth(), playerMonster2.getMaxHealth()));
 	}
 	
-	public Button getButton() {
-		return attack;
-	}
+	
 	
 
 }
