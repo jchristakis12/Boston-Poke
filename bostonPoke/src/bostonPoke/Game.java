@@ -2,6 +2,7 @@ package bostonPoke;
 
 import javafx.application.Application;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
@@ -26,11 +27,6 @@ public class Game extends Application{
 	public static void main(String[] args) {
 
 		
-		Trainer Theodore = new Trainer(1, true);
-		Geese Pham = new Geese();
-		Theodore.setMonster(Pham, 0);
-		Theodore.selectName();
-		
 		
 		Trainer Womusk = new Trainer(2, false);
 		HomelessMan myDude = new HomelessMan(); 
@@ -52,7 +48,7 @@ public class Game extends Application{
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
-		BorderPane pane = Map1.getMap();
+		BorderPane map = Map1.getMap();
 		Pane pane2 = new Pane();
 		
 		Image boss1 = new Image("https://vignette.wikia.nocookie.net/dreamworks/images/5/52/8260c358617564297ca30c4dbbef7c26.jpg/revision/latest?cb=20190302123446");
@@ -63,14 +59,14 @@ public class Game extends Application{
 		imgView8.setFitWidth(100);
 				
 		
+		//Creates the character image and inserts it into the map and handles user input to move the image around 
 		Image character = new Image("https://vignette.wikia.nocookie.net/pokemon/images/7/7a/VS_Red_SM.png/revision/latest?cb=20170101032644");
 		ImageView mainChar = new ImageView(character);
 		mainChar.setLayoutX(820);
 		mainChar.setLayoutY(750);
 		mainChar.setFitHeight(70);
 		mainChar.setFitWidth(100);
-		
-		
+				
 		mainChar.setOnKeyPressed(new EventHandler<KeyEvent>() {
 		
 			
@@ -91,23 +87,21 @@ public class Game extends Application{
 				}
 			}
 		}); 
-		Button btn = new Button();
-		btn.setText("GO BACK!");
-		pane2.getChildren().add(btn);
-		pane.getChildren().addAll(mainChar,imgView8);
-		Scene mainMap = new Scene(pane, 1000,800);
-		Scene Yuur = new Scene(pane2,200,200);
+		map.getChildren().addAll(mainChar,imgView8);
+		Scene mainMap = new Scene(map, 1000,800);
+		
+		//Creates the scene for the first battle and handles 
+		final FXMLLoader loader = new FXMLLoader(getClass().getResource("Battle.fxml"));
+		Pane battleScene1 = loader.load();
+		Scene battle1 = new Scene(battleScene1,1000,800);
 		
 		primaryStage.setTitle("MAIN MAP");
 		primaryStage.setScene(mainMap);
 		primaryStage.show();
 
-
 		mainChar.requestFocus();
 
-		imgView8.setOnMouseClicked(e -> primaryStage.setScene(Yuur));
-		btn.setOnMouseClicked(e -> primaryStage.setScene(mainMap));
-
+		imgView8.setOnMouseClicked(e -> primaryStage.setScene(battle1));
 
 		mainChar.requestFocus();
 
