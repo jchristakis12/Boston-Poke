@@ -23,6 +23,7 @@ import monsters.Geese;
 import monsters.GreenLine;
 import monsters.HomelessMan;
 import monsters.Humanoid;
+import monsters.Monster;
 
 public class Game extends Application{
 	
@@ -53,6 +54,8 @@ public class Game extends Application{
 		bigChungus.setMonster(commuterRail, 2);
 		
 		Player player = new Player(playerName, playerGender);
+		
+		
 		
 		launch(args);
 		
@@ -124,7 +127,7 @@ public class Game extends Application{
 		TextField enterName = new TextField(); 
 		((GridPane) startS).add(enterName, 3, 2);
 		TextField Gender = new TextField();
-		((GridPane) startS).add(Gender, 2, 4);
+		((GridPane) startS).add(Gender, 3, 4);
 
 		
 		submit.setOnAction(e->{
@@ -133,6 +136,8 @@ public class Game extends Application{
 			playerGender = Gender.getText();
 			primaryStage.setScene(mainMap);
 		});
+		
+		
 		
 		imgView8.setOnMouseClicked(e -> primaryStage.setScene(Yuur));
 		
