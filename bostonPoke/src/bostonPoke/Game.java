@@ -33,6 +33,10 @@ public class Game extends Application{
 	
 	static String playerName = null;
 	static String playerGender = null;
+	static Monster playerMonster;
+	
+	static Trainer Womusk;
+	static Trainer bigChungus;
 
 	public static void main(String[] args) {
 
@@ -128,6 +132,16 @@ public class Game extends Application{
 		((FlowPane) startS).getChildren().add(Gender);
 
 		
+		Button squirrel = new Button("Squirrel");
+		((GridPane) startS).add(squirrel, 2, 8);
+		
+		squirrel.setOnAction(e->{
+			playerMonster = Player.selectMonster(1);
+			if(playerMonster instanceof Monster) {
+				System.out.print(playerName);
+			}
+		});
+		
 		submit.setOnAction(e->{
 			//String playerName = startS how to access textfield from game
 			playerName = enterName.getText();
@@ -138,7 +152,10 @@ public class Game extends Application{
 		
 		
 		
-		imgView8.setOnMouseClicked(e -> primaryStage.setScene(battle1));
+		imgView8.setOnMouseClicked(e->{
+			primaryStage.setTitle("Fight!");
+			primaryStage.setScene(battle1);
+		});
 		
 
 
