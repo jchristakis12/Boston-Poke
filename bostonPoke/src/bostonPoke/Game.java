@@ -33,9 +33,7 @@ import monsters.Monster;
 
 
 public class Game extends Application{
-<<<<<<< HEAD
-=======
-	
+
 	static Player player;
 	static Trainer Theodore;
 	static Trainer Womusk;
@@ -67,55 +65,33 @@ public class Game extends Application{
 	
 	Pane battlePane;
 	
->>>>>>> db9fcbdd9fb00aaab2be60f9399f96164b6e9a14
-
-static String playerName;
-static String playerGender;
-static Monster playerMonster;
-
-<<<<<<< HEAD
-static Trainer Womusk;
-static Trainer bigChungus;
 
 public static void main(String[] args) {
 
  
  
 		Trainer Womusk = new Trainer(2, false);
-=======
+
 		
 		
 		Womusk = new Trainer(2, false);
->>>>>>> db9fcbdd9fb00aaab2be60f9399f96164b6e9a14
 		HomelessMan myDude = new HomelessMan(); 
 		Geese Fronto = new Geese();
 		Womusk.setMonster(myDude, 0);
 		Womusk.setMonster(Fronto, 1);
-<<<<<<< HEAD
  
 		Trainer bigChungus = new Trainer(3, true);
-=======
 		
 		bigChungus = new Trainer(3, true);
->>>>>>> db9fcbdd9fb00aaab2be60f9399f96164b6e9a14
 		GreenLine blueLine = new GreenLine();
 		GreenLine commuterRail = new GreenLine();
 		Geese meatShield = new Geese();
 		bigChungus.setMonster(blueLine, 0);
 		bigChungus.setMonster(meatShield, 1);
 		bigChungus.setMonster(commuterRail, 2);
-<<<<<<< HEAD
  
 		Player player = new Player(playerName, playerGender);
- 
- 
- 
-=======
-		
-		
-		
-		
->>>>>>> db9fcbdd9fb00aaab2be60f9399f96164b6e9a14
+
 		launch(args);
  
 		System.out.println(playerName);
@@ -171,11 +147,7 @@ public void start(Stage primaryStage) throws Exception {
 		final FXMLLoader loader = new FXMLLoader(getClass().getResource("Battle.fxml"));
 		Pane battleScene1 = loader.load();
 		Scene battle1 = new Scene(battleScene1,1000,800);
-<<<<<<< HEAD
 		Scene start = new Scene(startS, 500, 500);
-=======
-		Scene start = new Scene(startS, 1000, 800);
->>>>>>> db9fcbdd9fb00aaab2be60f9399f96164b6e9a14
 		
 
 		primaryStage.setTitle("Start Game!");
@@ -183,7 +155,6 @@ public void start(Stage primaryStage) throws Exception {
 		primaryStage.show();
 
 		mainChar.requestFocus();
-<<<<<<< HEAD
  
 
 		TextField enterName = new TextField();
@@ -191,26 +162,7 @@ public void start(Stage primaryStage) throws Exception {
 		((GridPane) startS).add(enterName, 1, 1, 3, 1);
 		TextField enterGender = new TextField();
 		//enterGender.setPrefSize(100, 30);
-		((GridPane) startS).add(enterGender, 1, 2, 3, 1);
-=======
-<<<<<<< HEAD
-		
-	
-		TextField enterName = new TextField(); 
-		((GridPane) startS).add(enterName, 3, 2);
-		TextField enterGender = new TextField();
-		((GridPane) startS).add(enterGender, 3, 4);
-=======
-
-		Button submit = new Button("SUBMIT");
-		startS.getChildren().add(submit);
-		
-		TextField enterName = new TextField(); 
-		((FlowPane) startS).getChildren().add(enterName);
-		TextField Gender = new TextField();
-		((FlowPane) startS).getChildren().add(Gender);
->>>>>>> 9c6ee80e3bbda033cd2e4a04fe8e2249a7279c92
->>>>>>> db9fcbdd9fb00aaab2be60f9399f96164b6e9a14
+		((GridPane) startS).add(enterGender, 1, 2, 3, 1);		
 
  
 		Button squirrel = new Button("Squirrel");
@@ -248,7 +200,7 @@ public void start(Stage primaryStage) throws Exception {
 			playerMonster = Player.selectMonster(1);
 			playerName = enterName.getText();
 			playerGender = enterGender.getText();
-<<<<<<< HEAD
+
 			if(playerMonster instanceof Monster) {
 				System.out.println(playerName);
 				System.out.println(playerMonster.getName());
@@ -260,7 +212,7 @@ public void start(Stage primaryStage) throws Exception {
 			});
 		
 		homelessman.setOnAction(e->{
-=======
+
 
 			
 			primaryStage.setTitle("MAIN MAP");
@@ -279,7 +231,6 @@ public void start(Stage primaryStage) throws Exception {
 		
 		
 		squirrel.setOnAction(e->{
->>>>>>> db9fcbdd9fb00aaab2be60f9399f96164b6e9a14
 			playerMonster = Player.selectMonster(1);
 			playerName = enterName.getText();
 			playerGender = enterGender.getText();
@@ -288,7 +239,7 @@ public void start(Stage primaryStage) throws Exception {
 				System.out.println(playerMonster.getName());
 				System.out.println(playerGender);
 			}
-<<<<<<< HEAD
+
 			primaryStage.setTitle("MAIN MAP");
 			primaryStage.setScene(mainMap);
 
@@ -300,10 +251,14 @@ public void start(Stage primaryStage) throws Exception {
 		primaryStage.setScene(battle1);
  });
  
-=======
 			primaryStage.setScene(mainMap);
-		});
+			
+			primaryStage.setTitle("Start Game!");
+			primaryStage.setScene(start);
+			primaryStage.show();
+
 		
+			imgView8.setOnMouseClicked(e-> primaryStage.setScene(battle1));
 		
 		/*
 		 * BATTLE1 SHIT
@@ -321,13 +276,10 @@ public void start(Stage primaryStage) throws Exception {
 		});
 		*/
 		
->>>>>>> db9fcbdd9fb00aaab2be60f9399f96164b6e9a14
-
-
-		mainChar.requestFocus();
 
  
 };
+
  
  
 
