@@ -71,7 +71,7 @@ public class Trainer {
 			return name;
 		}
 		
-		public static Monster[] getMonster() {
+		public Monster[] getMonster() {
 			return monsters;
 		}
 		

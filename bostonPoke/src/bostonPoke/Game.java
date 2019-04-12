@@ -20,6 +20,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -94,7 +95,6 @@ public static void main(String[] args) {
 
 		launch(args);
  
-		System.out.println(playerName);
 }  
 
 @Override
@@ -103,16 +103,9 @@ public void start(Stage primaryStage) throws Exception {
 		BorderPane map = Map1.getMap();
 		Pane pane2 = new Pane();
 		Pane startS = Start.start();
- 
-		Image boss1 = new Image("http://www.stickpng.com/assets/images/58b1702a102ddecdee0dd039.png");
-		ImageView imgView8 = new ImageView(boss1);
-		imgView8.setLayoutX(375);
-		imgView8.setLayoutY(100);
-		imgView8.setFitHeight(125);
-		imgView8.setFitWidth(175);
+		Text PlayerName = new Text();
    
- 
-		//Creates the character image and inserts it into the map and handles user input to move the image around 
+/////////Creates the character image and inserts it into the map and handles user input to move the image around/////////////// 
 		Image character = new Image("https://vignette.wikia.nocookie.net/pokemon/images/7/7a/VS_Red_SM.png/revision/latest?cb=20170101032644");
 		ImageView mainChar = new ImageView(character);
 		mainChar.setLayoutX(820);
@@ -122,10 +115,8 @@ public void start(Stage primaryStage) throws Exception {
    
 		mainChar.setOnKeyPressed(new EventHandler<KeyEvent>() {
  
-  
 		@Override
 		public void handle(KeyEvent event) {
-		// TODO Auto-generated method stub
 			if (event.getCode() == KeyCode.LEFT) {
 				mainChar.setX(mainChar.getX() - 10);
 			}
@@ -140,23 +131,26 @@ public void start(Stage primaryStage) throws Exception {
 			}
   	}
  }); 
+		
+		mainChar.requestFocus();
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
+		
+//////////////////////Handles adding first trainer into map////////////////////////////////////////////////////////////		
+		Image boss1 = new Image("http://www.stickpng.com/assets/images/58b1702a102ddecdee0dd039.png");
+		ImageView imgView8 = new ImageView(boss1);
+		imgView8.setLayoutX(375);
+		imgView8.setLayoutY(100);
+		imgView8.setFitHeight(125);
+		imgView8.setFitWidth(175);
 		map.getChildren().addAll(mainChar,imgView8);
 		Scene mainMap = new Scene(map, 1000,800);
- 
-		//Creates the scene for the first battle and handles 
-		final FXMLLoader loader = new FXMLLoader(getClass().getResource("Battle.fxml"));
-		Pane battleScene1 = loader.load();
-		Scene battle1 = new Scene(battleScene1,1000,800);
+ /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		
 		Scene start = new Scene(startS, 500, 500);
 		
-
-		primaryStage.setTitle("Start Game!");
-		primaryStage.setScene(start);
-		primaryStage.show();
-
-		mainChar.requestFocus();
- 
-
+		
+///////////////////////////////////////////START SCREEN/////////////////////////////////////////////////////////////////
 		TextField enterName = new TextField();
 		//enterName.setPrefSize(100, 30);
 		((GridPane) startS).add(enterName, 1, 1, 3, 1);
@@ -165,10 +159,10 @@ public void start(Stage primaryStage) throws Exception {
 		((GridPane) startS).add(enterGender, 1, 2, 3, 1);		
 
  
-		Button squirrel = new Button("Squirrel");
+		Button train = new Button("Train");
 		//squirrel.setAlignment(Pos.CENTER);
 		//squirrel.setPrefSize(75, 25);
-		((GridPane) startS).add(squirrel, 1, 3);
+		((GridPane) startS).add(train, 1, 3);
 		
 		Button geese = new Button("Geese");
 		//geese.setPrefSize(75, 25);
@@ -182,10 +176,11 @@ public void start(Stage primaryStage) throws Exception {
 		
 		
  
-		squirrel.setOnAction(e->{
-		playerMonster = Player.selectMonster(1);
+		train.setOnAction(e->{
+		playerMonster = Player.selectMonster(2);
 		playerName = enterName.getText();
 		playerGender = enterGender.getText();
+		PlayerName.setText(playerName);
 		if(playerMonster instanceof Monster) {
 			System.out.println(playerName);
 			System.out.println(playerMonster.getName());
@@ -193,6 +188,7 @@ public void start(Stage primaryStage) throws Exception {
 		}
 		primaryStage.setTitle("MAIN MAP");
 		primaryStage.setScene(mainMap);
+		mainChar.requestFocus();
 
 		});
 		
@@ -200,7 +196,7 @@ public void start(Stage primaryStage) throws Exception {
 			playerMonster = Player.selectMonster(1);
 			playerName = enterName.getText();
 			playerGender = enterGender.getText();
-
+			PlayerName.setText(playerName);
 			if(playerMonster instanceof Monster) {
 				System.out.println(playerName);
 				System.out.println(playerMonster.getName());
@@ -208,48 +204,85 @@ public void start(Stage primaryStage) throws Exception {
 			}
 			primaryStage.setTitle("MAIN MAP");
 			primaryStage.setScene(mainMap);
-
+			mainChar.requestFocus();
+			
 			});
 		
 		homelessman.setOnAction(e->{
-
-
-			
-			primaryStage.setTitle("MAIN MAP");
-			primaryStage.setScene(mainMap);
-
-		});
-		
-		
-		imgView8.setOnMouseClicked(e->{
-			
-			Pane p = Battle1.getBattle(player, Theodore);
-			Scene a = new Scene(p, 500, 500);
-			primaryStage.setTitle("Face off");
-			primaryStage.setScene(a);
-		});
-		
-		
-		squirrel.setOnAction(e->{
-			playerMonster = Player.selectMonster(1);
+			playerMonster = Player.selectMonster(0);
 			playerName = enterName.getText();
 			playerGender = enterGender.getText();
+			PlayerName.setText(playerName);
 			if(playerMonster instanceof Monster) {
 				System.out.println(playerName);
 				System.out.println(playerMonster.getName());
 				System.out.println(playerGender);
 			}
-
 			primaryStage.setTitle("MAIN MAP");
 			primaryStage.setScene(mainMap);
+			mainChar.requestFocus();
 
+		});
+		
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 		
+//////////////////////////////////////////BATTLE 1 BOYS///////////////////////////////////////////////////////////////
+			
+			Pane b1p = new Pane();
+			VBox b1vbox = new VBox(50);
+			b1vbox.setAlignment(Pos.CENTER);
+			VBox b1vbox1 = new VBox(50);
+			b1vbox1.setAlignment(Pos.CENTER);
+			HBox b1hbox = new HBox(50);
+			Text TrainerName1 = new Text("Teddy");
+			Image playerMon = new Image("https://vignette.wikia.nocookie.net/pokemon/images/7/7a/VS_Red_SM.png/revision/latest?cb=20170101032644");
+			ImageView viewPlayer = new ImageView(playerMon);
+			
+			viewPlayer.setPreserveRatio(true);
+			viewPlayer.setFitHeight(300);
+			viewPlayer.setFitWidth(300);
+			Image b1monster = new Image("http://www.stickpng.com/assets/images/58b1702a102ddecdee0dd039.png");
+			ImageView monsterb1 = new ImageView(b1monster);
+			monsterb1.setPreserveRatio(true);
+			monsterb1.setFitHeight(300);
+			monsterb1.setFitWidth(300);
+			Button atk = new Button("Attack");
+			Button returnBtn = new Button("Leave");
+			
+			Rectangle healthbar = new Rectangle (100, 100);
+			
+			//vbox.setMargin(PlayerName, new Insets(40, 0, 0, 0));
+			b1vbox.getChildren().addAll(PlayerName, viewPlayer, atk);
+			//vbox1.setMargin(TrainerName, new Insets(40, 0, 0, 0));
+			b1vbox1.getChildren().addAll(TrainerName1, monsterb1);
+			b1hbox.getChildren().addAll(b1vbox, b1vbox1);
+			b1p.getChildren().addAll(b1hbox, healthbar);
+			Scene battle1 = new Scene(b1p, 700, 700);
+			
+			
+			
+			atk.setOnAction(e->{
+				healthbar.setWidth(healthbar.getWidth() - 10);;
+				if(healthbar.getWidth() == 0) {
+					b1vbox1.getChildren().add(returnBtn);
+				}
 			});
- 
- 
+			
+			returnBtn.setOnAction(e->{
+				primaryStage.setScene(mainMap);
+				mainChar.requestFocus();
+			});
+			
+			
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+		
+			
+			
+			
 		imgView8.setOnMouseClicked(e->{
 		primaryStage.setTitle("Fight!");
 		primaryStage.setScene(battle1);
- });
+		});
  
 			primaryStage.setScene(mainMap);
 			
@@ -260,29 +293,11 @@ public void start(Stage primaryStage) throws Exception {
 		
 			imgView8.setOnMouseClicked(e-> primaryStage.setScene(battle1));
 		
-		/*
-		 * BATTLE1 SHIT
-		 * 	 */
 		
-		/*
-		 * 
-		attack.setOnAction(e->{
-			Tra.setHealth(10);
-		
-			ebar.setText(String.format("HP: %d / %d", monsterInUse.getHealth(), monsterInUse.getMaxHealth()));	
-			eHealth.setX(eHealth.getX() - 10);
-			
-			monsterInUse = Find(arr);
-		});
-		*/
-		
+ 
+	};
 
  
-};
-
- 
- 
-
 }
 
 
