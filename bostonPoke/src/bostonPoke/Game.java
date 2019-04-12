@@ -56,6 +56,8 @@ public class Game extends Application{
 		
 		
 		launch(args);
+		
+		System.out.println(playerName);
 	}		
 
 	@Override

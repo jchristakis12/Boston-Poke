@@ -1,5 +1,6 @@
 package bostonPoke;
 
+import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,9 +15,10 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import monsters.Monster;
 
-public class Battle1 {
+public class Battle1 extends Application {
 	
 	
 	static String playerName;
@@ -39,6 +41,16 @@ public class Battle1 {
 	
 	static Text pbar;
 	static Text ebar;
+	@Override
+	public void start(Stage primaryStage ) throws Exception{
+		
+		final FXMLLoader loader = new FXMLLoader(getClass().getResource("Battle.fxml"));
+		Pane battleScene1 = loader.load();
+		Scene battle1 = new Scene(battleScene1,1000,800);
+		
+		
+		
+	}
 	
 	
 	public static Pane getBattle(Player player, Trainer opponent) {
@@ -55,7 +67,12 @@ public class Battle1 {
 		
 		Button attack = new Button("Attack");//i guess this isn't needed idk 
 		attack.setOnMouseClicked(e->{
-			playerMonster.attack(monsterInUse);
+			monsterInUse.setHealth(10);
+			
+			ebar.setText(String.format("HP: %d / %d", monsterInUse.getHealth(), monsterInUse.getMaxHealth()));	
+			eHealth.setX(eHealth.getX() - 10);
+			
+			monsterInUse = Find(arr);
 		});
 		
 		
