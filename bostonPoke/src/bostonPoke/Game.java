@@ -15,6 +15,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
@@ -63,7 +64,7 @@ public class Game extends Application{
 		
 		BorderPane map = Map1.getMap();
 		Pane pane2 = new Pane();
-		Pane startS = Start.start();
+		FlowPane startS = Start.start();
 		
 		Image boss1 = new Image("http://www.stickpng.com/assets/images/58b1702a102ddecdee0dd039.png");
 		ImageView imgView8 = new ImageView(boss1);
@@ -115,14 +116,14 @@ public class Game extends Application{
 		primaryStage.show();
 
 		mainChar.requestFocus();
-		
+
 		Button submit = new Button("SUBMIT");
 		startS.getChildren().add(submit);
 		
 		TextField enterName = new TextField(); 
-		((GridPane) startS).add(enterName, 3, 2);
+		((FlowPane) startS).getChildren().add(enterName);
 		TextField Gender = new TextField();
-		((GridPane) startS).add(Gender, 3, 4);
+		((FlowPane) startS).getChildren().add(Gender);
 
 		
 		submit.setOnAction(e->{
