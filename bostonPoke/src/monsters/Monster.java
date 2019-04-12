@@ -27,6 +27,10 @@ public abstract class Monster {
 		}
 		return health;
 	}
+	public int setHealth(int x) {
+		health = health - x;
+		return health;
+	}
 	
 	public int getLvL() {
 		return level;
