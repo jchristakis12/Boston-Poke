@@ -20,6 +20,14 @@ public class Start extends Application {
 	public static GridPane start() throws Exception {
 		// TODO Auto-generated method stub
 		
+		
+		
+		
+		
+		
+		
+		
+		
 		GridPane p = new GridPane();
 		Text Welcome =  new Text("Welcome");
 		p.add(Welcome, 100, 0);
@@ -30,6 +38,9 @@ public class Start extends Application {
 		
 		Text Gender = new Text("Gender:");
 		p.add(Gender, 2, 4);
+		
+		
+		
 		
 		
 		
