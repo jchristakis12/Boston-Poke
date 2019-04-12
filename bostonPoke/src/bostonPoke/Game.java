@@ -18,6 +18,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import monsters.Geese;
 import monsters.GreenLine;
@@ -30,24 +31,49 @@ import monsters.Monster;
 
 public class Game extends Application{
 	
-	static String playerName = null;
-	static String playerGender = null;
-	static Monster playerMonster;
-	
+	static Player player;
+	static Trainer Theodore;
 	static Trainer Womusk;
 	static Trainer bigChungus;
+	
+	static String playerName;
+	static Monster playerMonster;
+	static Image show;
+	static ImageView pV;//shows
+	static Rectangle pHealth;//shows
+	
+	
+	//top right
+	static String tName;
+	static Text t_Name;//shows
+	static Monster[] tsMonster;
+	static Monster monsterInUse;
+	static Image image;
+	static ImageView showcased;//shows
+	static Rectangle eHealth;
+	
+	static String playerGender;
+	
+	
+	static Text pbar;
+	static Text ebar;
+	
+	public static Button leave;
+	
+	Pane battlePane;
+	
 
 	public static void main(String[] args) {
 
 		
 		
-		Trainer Womusk = new Trainer(2, false);
+		Womusk = new Trainer(2, false);
 		HomelessMan myDude = new HomelessMan(); 
 		Geese Fronto = new Geese();
 		Womusk.setMonster(myDude, 0);
 		Womusk.setMonster(Fronto, 1);
 		
-		Trainer bigChungus = new Trainer(3, true);
+		bigChungus = new Trainer(3, true);
 		GreenLine blueLine = new GreenLine();
 		GreenLine commuterRail = new GreenLine();
 		Geese meatShield = new Geese();
@@ -55,7 +81,6 @@ public class Game extends Application{
 		bigChungus.setMonster(meatShield, 1);
 		bigChungus.setMonster(commuterRail, 2);
 		
-		Player player = new Player(playerName, playerGender);
 		
 		
 		
@@ -115,6 +140,7 @@ public class Game extends Application{
 		Pane battleScene1 = loader.load();
 		Scene battle1 = new Scene(battleScene1,1000,800);
 		Scene start = new Scene(startS, 1000, 800);
+		
 
 		primaryStage.setTitle("Start Game!");
 		primaryStage.setScene(start);
@@ -122,13 +148,11 @@ public class Game extends Application{
 
 		mainChar.requestFocus();
 		
-		Button submit = new Button("SUBMIT");
-		startS.getChildren().add(submit);
-		
+	
 		TextField enterName = new TextField(); 
 		((GridPane) startS).add(enterName, 3, 2);
-		TextField Gender = new TextField();
-		((GridPane) startS).add(Gender, 3, 4);
+		TextField enterGender = new TextField();
+		((GridPane) startS).add(enterGender, 3, 4);
 
 		
 		Button squirrel = new Button("Squirrel");
@@ -136,27 +160,54 @@ public class Game extends Application{
 		
 		squirrel.setOnAction(e->{
 			playerMonster = Player.selectMonster(1);
-			if(playerMonster instanceof Monster) {
-				System.out.print(playerName);
-			}
+			playerName = enterName.getText();
+			playerGender = enterGender.getText();
+
+			
+			primaryStage.setTitle("MAIN MAP");
+			primaryStage.setScene(mainMap);
+
 		});
 		
-		submit.setOnAction(e->{
-			//String playerName = startS how to access textfield from game
+		
+		imgView8.setOnMouseClicked(e->{
+			
+			Pane p = Battle1.getBattle(player, Theodore);
+			Scene a = new Scene(p, 500, 500);
+			primaryStage.setTitle("Face off");
+			primaryStage.setScene(a);
+		});
+		
+		
+		squirrel.setOnAction(e->{
+			playerMonster = Player.selectMonster(1);
 			playerName = enterName.getText();
-			playerGender = Gender.getText();
-			primaryStage.setTitle("MAIN MAP");
+			playerGender = enterGender.getText();
+			if(playerMonster instanceof Monster) {
+				System.out.println(playerName);
+				System.out.println(playerMonster.getName());
+				System.out.println(playerGender);
+			}
 			primaryStage.setScene(mainMap);
 		});
 		
 		
+		/*
+		 * BATTLE1 SHIT
+		 * 	 */
 		
-		imgView8.setOnMouseClicked(e->{
-			primaryStage.setTitle("Fight!");
-			primaryStage.setScene(battle1);
+		/*
+		 * 
+		attack.setOnAction(e->{
+			Tra.setHealth(10);
+		
+			ebar.setText(String.format("HP: %d / %d", monsterInUse.getHealth(), monsterInUse.getMaxHealth()));	
+			eHealth.setX(eHealth.getX() - 10);
+			
+			monsterInUse = Find(arr);
 		});
+		*/
 		
-
 
 
 		mainChar.requestFocus();

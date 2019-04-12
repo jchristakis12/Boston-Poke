@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bostonPoke.Game">
    <children>
       <HBox prefHeight="100.0" prefWidth="600.0">
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="YOUR NAME">
+                  <Text fx:id="playerNameDisplay" strokeType="OUTSIDE" strokeWidth="0.0" text="YOUR NAME">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -21,7 +25,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="OPPONENT NAME">
+                  <Text fx:id="oName" strokeType="OUTSIDE" strokeWidth="0.0" text="OPPONENT NAME">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -34,7 +38,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="73.0" text="ATTACK" />
+                  <Button fx:id="attack" mnemonicParsing="false" prefHeight="36.0" prefWidth="73.0" text="ATTACK" />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="300.0">
@@ -54,7 +58,7 @@
          <children>
             <HBox alignment="CENTER" prefHeight="57.0" prefWidth="300.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="YOUR MONSTER HEALTH: " />
+                  <Text fx:id="pHealth" strokeType="OUTSIDE" strokeWidth="0.0" text="YOUR MONSTER HEALTH: " />
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="57.0" prefWidth="300.0">
