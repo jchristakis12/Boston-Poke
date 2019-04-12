@@ -119,6 +119,7 @@ launch(args);
 			monsterInUse.setHealth(10);
 		
 			ebar.setText(String.format("HP: %d / %d", monsterInUse.getHealth(), monsterInUse.getMaxHealth()));	
+<<<<<<< HEAD
 			eBealth.setX(eBealth.getX() - 10);
 			eBealth.setWidth(eBealth.getWidth() - 3);
 			
@@ -136,6 +137,11 @@ launch(args);
 			
 			
 			
+=======
+			eHealth.setX(eHealth.getX() - 10);
+
+			monsterInUse = Find(tsMonster);
+>>>>>>> 9c6ee80e3bbda033cd2e4a04fe8e2249a7279c92
 		});
 		
 		

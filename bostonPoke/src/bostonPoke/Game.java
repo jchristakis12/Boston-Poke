@@ -15,6 +15,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
@@ -94,9 +95,9 @@ public class Game extends Application{
 		
 		BorderPane map = Map1.getMap();
 		Pane pane2 = new Pane();
-		Pane startS = Start.start();
+		FlowPane startS = Start.start();
 		
-		Image boss1 = new Image("https://vignette.wikia.nocookie.net/dreamworks/images/5/52/8260c358617564297ca30c4dbbef7c26.jpg/revision/latest?cb=20190302123446");
+		Image boss1 = new Image("http://www.stickpng.com/assets/images/58b1702a102ddecdee0dd039.png");
 		ImageView imgView8 = new ImageView(boss1);
 		imgView8.setLayoutX(425);
 		imgView8.setLayoutY(100);
@@ -147,12 +148,23 @@ public class Game extends Application{
 		primaryStage.show();
 
 		mainChar.requestFocus();
+<<<<<<< HEAD
 		
 	
 		TextField enterName = new TextField(); 
 		((GridPane) startS).add(enterName, 3, 2);
 		TextField enterGender = new TextField();
 		((GridPane) startS).add(enterGender, 3, 4);
+=======
+
+		Button submit = new Button("SUBMIT");
+		startS.getChildren().add(submit);
+		
+		TextField enterName = new TextField(); 
+		((FlowPane) startS).getChildren().add(enterName);
+		TextField Gender = new TextField();
+		((FlowPane) startS).getChildren().add(Gender);
+>>>>>>> 9c6ee80e3bbda033cd2e4a04fe8e2249a7279c92
 
 		
 		Button squirrel = new Button("Squirrel");
