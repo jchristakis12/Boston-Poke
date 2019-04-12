@@ -23,11 +23,9 @@ public class Start extends Application {
 	public static FlowPane start() throws Exception {
 		// TODO Auto-generated method stub
 		
-<<<<<<< HEAD
 		FlowPane p = new FlowPane();
 		p.setVgap(20);
 		p.setHgap(20);
-=======
 		
 		
 		
@@ -39,7 +37,6 @@ public class Start extends Application {
 		GridPane p = new GridPane();
 		Text Welcome =  new Text("Welcome");
 		p.add(Welcome, 100, 0);
->>>>>>> f84868d68da430c7999f9240980cbad6e8df21db
 		
 		
 		HBox hbox = new HBox(10);

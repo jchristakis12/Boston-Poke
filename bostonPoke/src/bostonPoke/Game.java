@@ -94,7 +94,6 @@ public class Game extends Application{
 	public void start(Stage primaryStage) throws Exception {
 		
 		BorderPane map = Map1.getMap();
-		Pane pane2 = new Pane();
 		FlowPane startS = Start.start();
 		
 		Image boss1 = new Image("http://www.stickpng.com/assets/images/58b1702a102ddecdee0dd039.png");
@@ -148,14 +147,7 @@ public class Game extends Application{
 		primaryStage.show();
 
 		mainChar.requestFocus();
-<<<<<<< HEAD
-		
-	
-		TextField enterName = new TextField(); 
-		((GridPane) startS).add(enterName, 3, 2);
-		TextField enterGender = new TextField();
-		((GridPane) startS).add(enterGender, 3, 4);
-=======
+
 
 		Button submit = new Button("SUBMIT");
 		startS.getChildren().add(submit);
@@ -164,16 +156,14 @@ public class Game extends Application{
 		((FlowPane) startS).getChildren().add(enterName);
 		TextField Gender = new TextField();
 		((FlowPane) startS).getChildren().add(Gender);
->>>>>>> 9c6ee80e3bbda033cd2e4a04fe8e2249a7279c92
 
 		
 		Button squirrel = new Button("Squirrel");
-		((GridPane) startS).add(squirrel, 2, 8);
 		
 		squirrel.setOnAction(e->{
 			playerMonster = Player.selectMonster(1);
 			playerName = enterName.getText();
-			playerGender = enterGender.getText();
+			//playerGender = enterGender.getText();
 
 			
 			primaryStage.setTitle("MAIN MAP");
@@ -194,7 +184,7 @@ public class Game extends Application{
 		squirrel.setOnAction(e->{
 			playerMonster = Player.selectMonster(1);
 			playerName = enterName.getText();
-			playerGender = enterGender.getText();
+		//	playerGender = enterGender.getText();
 			if(playerMonster instanceof Monster) {
 				System.out.println(playerName);
 				System.out.println(playerMonster.getName());
