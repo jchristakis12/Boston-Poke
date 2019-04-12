@@ -153,42 +153,43 @@ public class Map1 {
 		
 		
 		
-		Image b2_fire1 = new Image("https://images.pond5.com/hand-drawn-fire-animation-transparent-footage-070060562_iconm.jpeg");
+		Image b2_fire1 = new Image("http://clipart-library.com/data_images/509434.png");
 		ImageView imgView16 = new ImageView(b2_fire1);
-		imgView16.setLayoutX(475);
-		imgView16.setLayoutY(510);
-		imgView16.setFitHeight(125);
-		imgView16.setFitWidth(200);
+		imgView16.setLayoutX(575);
+		imgView16.setLayoutY(560);
+		imgView16.setFitHeight(75);
+		imgView16.setFitWidth(50);
 		
-		Image b2_fire2 = new Image("https://images.pond5.com/hand-drawn-fire-animation-transparent-footage-070060562_iconm.jpeg");
+		
+		Image b2_fire2 = new Image("http://clipart-library.com/data_images/509434.png");
 		ImageView imgView17 = new ImageView(b2_fire2);
-		imgView17.setLayoutX(475);
-		imgView17.setLayoutY(410);
-		imgView17.setFitHeight(125);
-		imgView17.setFitWidth(200);
+		imgView17.setLayoutX(575);
+		imgView17.setLayoutY(470);
+		imgView17.setFitHeight(75);
+		imgView17.setFitWidth(50);
 		
 		
-		Image b2_fire3 = new Image("https://images.pond5.com/hand-drawn-fire-animation-transparent-footage-070060562_iconm.jpeg");
+		Image b2_fire3 = new Image("http://clipart-library.com/data_images/509434.png");
 		ImageView imgView18 = new ImageView(b2_fire3);
-		imgView18.setLayoutX(475);
-		imgView18.setLayoutY(310);
-		imgView18.setFitHeight(125);
-		imgView18.setFitWidth(200);
+		imgView18.setLayoutX(575);
+		imgView18.setLayoutY(380);
+		imgView18.setFitHeight(75);
+		imgView18.setFitWidth(50);
 		
 		
-		Image b2_fire4 = new Image("https://images.pond5.com/hand-drawn-fire-animation-transparent-footage-070060562_iconm.jpeg");
+		Image b2_fire4 = new Image("http://clipart-library.com/data_images/509434.png");
 		ImageView imgView19 = new ImageView(b2_fire4);
-		imgView19.setLayoutX(300);
-		imgView19.setLayoutY(510);
-		imgView19.setFitHeight(125);
-		imgView19.setFitWidth(200);
+		imgView19.setLayoutX(355);
+		imgView19.setLayoutY(560);
+		imgView19.setFitHeight(75);
+		imgView19.setFitWidth(50);
 		
-		Image b2_fire5 = new Image("https://images.pond5.com/hand-drawn-fire-animation-transparent-footage-070060562_iconm.jpeg");
+		Image b2_fire5 = new Image("http://clipart-library.com/data_images/509434.png");
 		ImageView imgView20 = new ImageView(b2_fire5);
-		imgView20.setLayoutX(300);
-		imgView20.setLayoutY(410);
-		imgView20.setFitHeight(125);
-		imgView20.setFitWidth(200);
+		imgView20.setLayoutX(355);
+		imgView20.setLayoutY(470);
+		imgView20.setFitHeight(75);
+		imgView20.setFitWidth(50);
 		
 		
 		/*Image b2_fire6 = new Image("https://images.pond5.com/hand-drawn-fire-animation-transparent-footage-070060562_iconm.jpeg");

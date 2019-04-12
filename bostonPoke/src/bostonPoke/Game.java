@@ -65,7 +65,7 @@ public class Game extends Application{
 		Pane pane2 = new Pane();
 		Pane startS = Start.start();
 		
-		Image boss1 = new Image("https://vignette.wikia.nocookie.net/dreamworks/images/5/52/8260c358617564297ca30c4dbbef7c26.jpg/revision/latest?cb=20190302123446");
+		Image boss1 = new Image("http://www.stickpng.com/assets/images/58b1702a102ddecdee0dd039.png");
 		ImageView imgView8 = new ImageView(boss1);
 		imgView8.setLayoutX(425);
 		imgView8.setLayoutY(100);
