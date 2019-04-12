@@ -72,7 +72,7 @@ public class Battle1 extends Application {
 			ebar.setText(String.format("HP: %d / %d", monsterInUse.getHealth(), monsterInUse.getMaxHealth()));	
 			eHealth.setX(eHealth.getX() - 10);
 			
-			monsterInUse = Find(arr);
+		//	monsterInUse = Find(arr);
 		});
 		
 		
