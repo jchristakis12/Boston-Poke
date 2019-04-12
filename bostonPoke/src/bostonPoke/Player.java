@@ -27,14 +27,15 @@ public class Player {
 		return monster;
 	}
 	
-	public static void selectMonster(int choice) {
+	public static Monster selectMonster(int choice) {
 		if(choice == 0) {
-			monster = new HomelessMan();
+			return monster = new HomelessMan();
 		}else if(choice == 1) {
-			monster = new Geese();
+			return monster = new Geese();
 		}else if(choice == 2) {
-			monster= new GreenLine();
+			return monster= new GreenLine();
 		}
+		return null;
 	}
 	
 	
