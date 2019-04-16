@@ -5,6 +5,7 @@ import java.util.ResourceBundle;
 
 import javafx.application.Application;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -20,12 +21,10 @@ import javafx.stage.Stage;
 public class Start extends Application {
 
 	
-	public static FlowPane start() throws Exception {
+	public static GridPane start() throws Exception {
 		// TODO Auto-generated method stub
 		
-		FlowPane p = new FlowPane();
-		p.setVgap(20);
-		p.setHgap(20);
+		//FlowPane p = new FlowPane();
 		
 		
 		
@@ -34,9 +33,15 @@ public class Start extends Application {
 		
 		
 		
+
 		GridPane p = new GridPane();
-		Text Welcome =  new Text("Welcome");
-		p.add(Welcome, 100, 0);
+		//p.setGridLinesVisible(true);
+		p.setAlignment(Pos.CENTER);
+		p.setPrefSize(500, 400);
+		p.setHgap(10);
+		p.setVgap(10);
+		p.setPadding(new Insets(5));
+
 		
 		
 		HBox hbox = new HBox(10);
@@ -55,24 +60,21 @@ public class Start extends Application {
 		
 		
 		
-		
-		Text Name = new Text("Name:");
-		Name.setFont(Font.font("Verdana", 34));
-		
-		
-		Text Gender = new Text("Gender:");
-		Gender.setFont(Font.font("Verdana", 34));
-		
-		hbox.getChildren().add(Welcome); 
-		vbox.getChildren().addAll(Name, Gender);
-		
-		vbox1.getChildren().addAll(hbox, vbox);
-		
-		p.getChildren().addAll(vbox1);
+
+		Welcome.setFont(Font.font("Tahoma", 32));
+		p.add(Welcome, 100, 0);
 
 		
+	//	p.add(Welcome, 0, 0, 3, 1);
+
+		Text Name = new Text("Name: ");
+		p.add(Name, 0, 1);
 		
+		Text Gender = new Text("Gender: ");
+		p.add(Gender, 0, 2);
 		
+		Text SelectPokemon = new Text("Select Pokemon: ");
+		p.add(SelectPokemon, 0, 3);
 		
 		return p;
 		
