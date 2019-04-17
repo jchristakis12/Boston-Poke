@@ -7,7 +7,7 @@ public abstract class Humanoid extends Monster {
 	}
 	
 	@Override
-	public void attack(Monster opponent) {
+	public int attack(Monster opponent) {
 		int damage = attackDMG;
 		boolean crit = isCrit();
 		
@@ -29,7 +29,7 @@ public abstract class Humanoid extends Monster {
 			}
 		}
 		
-		opponent.takeDamage(damage);
+		return damage;
 	}
 
 }

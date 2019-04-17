@@ -87,7 +87,7 @@ public abstract class Monster {
 	public void heal() {
 		setHealth(maxHealth);
 	}
-	public abstract void attack(Monster opponent);		
+	public abstract int attack(Monster opponent);		
 	
 	public abstract void levelUP();	
 	
