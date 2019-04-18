@@ -71,8 +71,8 @@ public class Trainer {
 			return name;
 		}
 		
-		public Monster getMonster() {
-			return monsters[0];
+		public Monster[] getMonster() {
+			return monsters; // either this should return array or one. id think an array would be better then u can find if all are healthy
 		}
 		
 		public void setMonster(Monster monster, int index) {

@@ -105,7 +105,8 @@ public void start(Stage primaryStage) throws Exception {
 		BorderPane map = Map1.getMap();
 		GridPane startS = Start.start();
 		
-		mArr = Womusk.getMonster() ; // initialized here and used for battle 1
+		tsMonster = Womusk.getMonster() ; // initialized here and used for battle 1
+		mArr = tsMonster[0];
 		wHealth = mArr.getMaxHealth();
 		
 		
@@ -211,11 +212,7 @@ public void start(Stage primaryStage) throws Exception {
 		geese.setOnAction(e->{
 			playerMonster = Player.selectMonster(1);
 			playerName = enterName.getText();
-			//playerGender = enterGender.getText();
-
-			
 			playerGender = enterGender.getText();
-			//PlayerName.setText(playerName);
 			if(playerMonster instanceof Monster) {
 				System.out.println(playerName);
 				System.out.println(playerMonster.getName());
@@ -230,9 +227,7 @@ public void start(Stage primaryStage) throws Exception {
 		homelessman.setOnAction(e->{
 			playerMonster = Player.selectMonster(0);
 			playerName = enterName.getText();
-		//	playerGender = enterGender.getText();
 			playerGender = enterGender.getText();
-		//	PlayerName.setText(playerName);
 			if(playerMonster instanceof Monster) {
 				System.out.println(playerName);
 				System.out.println(playerMonster.getName());
@@ -283,11 +278,13 @@ public void start(Stage primaryStage) throws Exception {
 			
 			
 			atk.setOnAction(e->{
+				playerMonster.attack(mArr);
 				wHealth = wHealth - 10;
 				healthbar.setWidth(wHealth);; //atck button works now w/ health
 				if(wHealth == 0) {
 					b1vbox1.getChildren().add(returnBtn);
 				}
+				
 			});
 			
 			returnBtn.setOnAction(e->{
