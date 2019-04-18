@@ -24,6 +24,15 @@ public class Start extends Application {
 	public static GridPane start() throws Exception {
 		// TODO Auto-generated method stub
 		
+		//FlowPane p = new FlowPane();
+		
+		
+		
+		
+		
+		
+		
+		
 
 		GridPane p = new GridPane();
 		//p.setGridLinesVisible(true);
@@ -32,10 +41,31 @@ public class Start extends Application {
 		p.setHgap(10);
 		p.setVgap(10);
 		p.setPadding(new Insets(5));
-		Text Welcome =  new Text("Welcome");
-		Welcome.setFont(Font.font("Tahoma", 32));
+
 		
-		p.add(Welcome, 0, 0, 3, 1);
+		
+		HBox hbox = new HBox(10);
+		hbox.setPrefSize(200, 200);
+		
+		VBox vbox = new VBox(20);
+		vbox.setPrefSize(200, 200);
+		
+		VBox vbox1 = new VBox(20);
+		vbox1.setPrefSize(200, 200);
+		vbox1.setLayoutX(200);
+		vbox1.setLayoutY(200);
+		
+		Text Welcome =  new Text("Welcome");
+		Welcome.setFont(Font.font("Verdana", 45));
+		
+		
+		
+
+		Welcome.setFont(Font.font("Tahoma", 32));
+		p.add(Welcome, 100, 0);
+
+		
+	//	p.add(Welcome, 0, 0, 3, 1);
 
 		Text Name = new Text("Name: ");
 		p.add(Name, 0, 1);

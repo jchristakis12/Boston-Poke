@@ -71,12 +71,23 @@ public class Trainer {
 			return name;
 		}
 		
-		public Monster[] getMonster() {
-			return monsters;
+		public Monster getMonster() {
+			return monsters[0];
 		}
 		
 		public void setMonster(Monster monster, int index) {
 			monsters[index] = monster;
+		}
+		
+		public static Monster Find(Monster[] tsMonster) {
+			
+			for(int i = 0; i <= tsMonster.length -1; i++) {
+				if(tsMonster[i].isHealthy()) {
+					return tsMonster[i];
+				}
+			
+			}
+			return null;
 		}
 		
 		
