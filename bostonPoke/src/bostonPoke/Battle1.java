@@ -58,7 +58,7 @@ launch(args);
 
 	
 	 public static void getBattle() {
-		player1 = new Player("yes", "No");
+		player1 = new Player(Player.selectMonster(0),"yes", "No");
 
 		getBattle(player1, Game.bigChungus);
 		

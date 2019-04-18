@@ -8,8 +8,8 @@ public class GreenLine extends Constructs {
 
 	@Override
 	public void levelUP() {
-		this.setMaxHealth(150);
-		this.setAttackDMG(15);
+		this.setMaxHealth(this.getMaxHealth() + 50);
+		this.setAttackDMG(this.getAttackDMG() + 5);
 	}
 	
 	@Override

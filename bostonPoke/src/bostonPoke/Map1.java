@@ -144,15 +144,6 @@ public class Map1 {
 		
 		
 		
-		Image boss2 = new Image("https://vignette.wikia.nocookie.net/pokemon/images/2/29/Ingo.png/revision/latest?cb=20110225193531");
-		ImageView imgView15 = new ImageView(boss2);
-		imgView15.setLayoutX(450);
-		imgView15.setLayoutY(650);
-		imgView15.setFitHeight(100);
-		imgView15.setFitWidth(100);
-		
-		
-		
 		Image b2_fire1 = new Image("http://clipart-library.com/data_images/509434.png");
 		ImageView imgView16 = new ImageView(b2_fire1);
 		imgView16.setLayoutX(575);
@@ -202,12 +193,7 @@ public class Map1 {
 		
 		
 		
-		Image boss3 = new Image("https://upload.wikimedia.org/wikipedia/en/0/0e/Eggman_robotnik.png");
-		ImageView imgView22 = new ImageView(boss3);
-		imgView22.setLayoutX(75);
-		imgView22.setLayoutY(50);
-		imgView22.setFitHeight(150);
-		imgView22.setFitWidth(150);
+		
 		
 		
 		Image carpet = new Image("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/VgUL7MqLl/red-carpet-animation_4nia26npx__S0008.jpg");
@@ -219,7 +205,7 @@ public class Map1 {
 		
 		
 		
-		pane.getChildren().addAll( imgView1, imgView2, imgView3, imgView4, imgView5, imgView6, door, wall1, wall2, wall3, wall4, wall5, imgView9, imgView10, imgView11, imgView12, imgView13, imgView14, imgView15, imgView16, imgView17, imgView18, imgView19, imgView20, imgView22, imgView23);
+		pane.getChildren().addAll( imgView1, imgView2, imgView3, imgView4, imgView5, imgView6, door, wall1, wall2, wall3, wall4, wall5, imgView9, imgView10, imgView11, imgView12, imgView13, imgView14, imgView16, imgView17, imgView18, imgView19, imgView20, imgView23);
 		
 		return pane;
 		

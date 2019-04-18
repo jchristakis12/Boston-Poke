@@ -9,10 +9,12 @@ public class Player {
 	
 	private String name, gender;
 	private static Monster monster;
+	static String url;
 
-	public Player(String name, String gender) {
+	public Player(Monster monster, String name, String gender) {
 		this.name = name;
 		this.gender = gender;
+		Player.monster = monster;
 	}
 	
 	public String getName() {
@@ -29,11 +31,20 @@ public class Player {
 	
 	public static Monster selectMonster(int choice) {
 		if(choice == 0) {
-			return monster = new HomelessMan();
+			
+			monster = new HomelessMan();
+			url = monster.getURL();
+			return monster;
+			
 		}else if(choice == 1) {
-			return monster = new Geese();
+			 monster = new Geese();
+			url = monster.getURL();
+			return monster;
 		}else if(choice == 2) {
-			return monster= new GreenLine();
+			
+			 monster = new GreenLine();
+			 url = monster.getURL();
+			return monster;
 		}
 		return null;
 	}

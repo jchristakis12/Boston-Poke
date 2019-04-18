@@ -88,7 +88,6 @@ public static void main(String[] args) {
 		bigChungus.setMonster(meatShield, 1);
 		bigChungus.setMonster(commuterRail, 2);
  
-		Player player = new Player(playerName, playerGender);
 		
 		launch(args);
  
@@ -98,21 +97,19 @@ public static void main(String[] args) {
 public void start(Stage primaryStage) throws Exception {
  
 		BorderPane map = Map1.getMap();
-<<<<<<< HEAD
 		GridPane startS = Start.start();
 		
-		tsMonster = Womusk.getMonster() ; // initialized here and used for battle 1
-		mArr = tsMonster[0];
-		wHealth = mArr.getMaxHealth();
+		//tsMonster = Womusk.getMonster() ; // initialized here and used for battle 1
+		//mArr = tsMonster[0];
+		//wHealth = mArr.getMaxHealth();
 		
 		
 		//Creates the character image and inserts it into the map and handles user input to move the image around 
-=======
-		Pane startS = Start.start();
->>>>>>> 372da086654c67321c5d43b90d60a60dbb0e1299
 		Text PlayerName = new Text();
 		
 		Geese Jack = new Geese();
+		GreenLine DEAD = new GreenLine();
+		HomelessMan Steve = new HomelessMan();
    
 /////////Creates the character image and inserts it into the map and handles user input to move the image around/////////////// 
 		Image character = new Image("https://vignette.wikia.nocookie.net/pokemon/images/7/7a/VS_Red_SM.png/revision/latest?cb=20170101032644");
@@ -152,7 +149,27 @@ public void start(Stage primaryStage) throws Exception {
 		imgView8.setLayoutY(100);
 		imgView8.setFitHeight(125);
 		imgView8.setFitWidth(175);
-		map.getChildren().addAll(mainChar,imgView8);
+		
+///////////////////////////////////////////Boss 2//////////////////////////////////////////////////////////////////////
+		
+		Image boss2 = new Image("https://vignette.wikia.nocookie.net/pokemon/images/2/29/Ingo.png/revision/latest?cb=20110225193531");
+		ImageView imgView15 = new ImageView(boss2);
+		imgView15.setLayoutX(450);
+		imgView15.setLayoutY(650);
+		imgView15.setFitHeight(100);
+		imgView15.setFitWidth(100);
+		
+//////////////////////////////////////////Boss 3///////////////////////////////////////////////////////////////////////	
+		
+		Image boss3 = new Image("https://upload.wikimedia.org/wikipedia/en/0/0e/Eggman_robotnik.png");
+		ImageView imgView22 = new ImageView(boss3);
+		imgView22.setLayoutX(75);
+		imgView22.setLayoutY(50);
+		imgView22.setFitHeight(150);
+		imgView22.setFitWidth(150);
+		
+		////////////////////////////////////////////////////////////////////////////////////////////////////
+		map.getChildren().addAll(mainChar,imgView8,imgView15, imgView22);
 		Scene mainMap = new Scene(map, 1000,800);
  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
@@ -183,39 +200,35 @@ public void start(Stage primaryStage) throws Exception {
 		homelessman.setAlignment(Pos.CENTER);
 		((GridPane) startS).add(homelessman, 3, 3);
 		
-		
- 
 		train.setOnAction(e->{
 		playerMonster = Player.selectMonster(2);
 		playerName = enterName.getText();
 		playerGender = enterGender.getText();
+		player = new Player(playerMonster,playerName,playerGender);
 		PlayerName.setText(playerName);
 		if(playerMonster instanceof Monster) {
 			System.out.println(playerName);
 			System.out.println(playerMonster.getName());
 			System.out.println(playerGender);
 		}
-		Player player = new Player(playerName, playerGender);
 		primaryStage.setTitle("MAIN MAP");
 		primaryStage.setScene(mainMap);
 		mainChar.requestFocus();
 
 		});
 		
+		
 		geese.setOnAction(e->{
 			playerMonster = Player.selectMonster(1);
 			playerName = enterName.getText();
 			playerGender = enterGender.getText();
-<<<<<<< HEAD
-=======
+			player = new Player(playerMonster,playerName,playerGender);
 			PlayerName.setText(playerName);
->>>>>>> 372da086654c67321c5d43b90d60a60dbb0e1299
 			if(playerMonster instanceof Monster) {
 				System.out.println(playerName);
 				System.out.println(playerMonster.getName());
 				System.out.println(playerGender);
 			}
-			Player player = new Player(playerName, playerGender);
 			primaryStage.setTitle("MAIN MAP");
 			primaryStage.setScene(mainMap);
 			mainChar.requestFocus();
@@ -226,16 +239,13 @@ public void start(Stage primaryStage) throws Exception {
 			playerMonster = Player.selectMonster(0);
 			playerName = enterName.getText();
 			playerGender = enterGender.getText();
-<<<<<<< HEAD
-=======
+			player = new Player(playerMonster,playerName,playerGender);
 			PlayerName.setText(playerName);
->>>>>>> 372da086654c67321c5d43b90d60a60dbb0e1299
 			if(playerMonster instanceof Monster) {
 				System.out.println(playerName);
 				System.out.println(playerMonster.getName());
 				System.out.println(playerGender);
 			}
-			Player player = new Player(playerName, playerGender);
 			
 			primaryStage.setTitle("MAIN MAP");
 			primaryStage.setScene(mainMap);
@@ -252,7 +262,16 @@ public void start(Stage primaryStage) throws Exception {
 		sp.getChildren().add(imgTheEnd);
 		Scene endPage = new Scene(sp,700,700);
 
-		
+//////////////////////////////////////////LOSING END SCREEN//////////////////////////////////////////////////////////////// 
+primaryStage.setTitle("End page");
+StackPane sp1 = new StackPane();
+Image theEnd1 = 
+new Image("http://cdn3.whatculture.com/images/2019/04/ae8b6e43374302c8-600x338.jpg");
+ImageView imgTheEnd1 = new ImageView(theEnd1);
+
+sp1.getChildren().add(imgTheEnd1);
+Scene endPage1 = new Scene(sp1,700,700);
+
 		
 //////////////////////////////////////////BATTLE 1 BOYS///////////////////////////////////////////////////////////////
 			
@@ -264,7 +283,7 @@ public void start(Stage primaryStage) throws Exception {
 			b1vbox1.setAlignment(Pos.CENTER);
 			HBox b1hbox = new HBox(50);
 			Text TrainerName1 = new Text("Teddy");
-			Image playerMon = new Image("https://cdn20.patchcdn.com/users/22926785/20180524/112313/styles/T800x600/public/processed_images/greenlinenew_courtesy-1527175348-5740.jpg");
+			Image playerMon = new Image("https://i.ytimg.com/vi/8i41YRX5k5g/maxresdefault.jpg"); 
 			ImageView viewPlayer = new ImageView(playerMon);
 			
 			viewPlayer.setPreserveRatio(true);
@@ -308,13 +327,12 @@ public void start(Stage primaryStage) throws Exception {
 			Scene battle1 = new Scene(b1p,700,700);
 			
 			atk.setOnAction(e->{
-<<<<<<< HEAD
-				playerMonster.attack(mArr);
-				wHealth = wHealth - 10;
-				healthbar.setWidth(wHealth);; //atck button works now w/ health
-				if(wHealth == 0) {
-					b1vbox1.getChildren().add(returnBtn);
-=======
+			//	playerMonster.attack(mArr);
+			//	wHealth = wHealth - 10;
+			//	healthbar.setWidth(wHealth);; //atck button works now w/ health
+			//	if(wHealth == 0) {
+					//b1vbox1.getChildren().add(returnBtn);
+					
 				try {
 					attackDMG = playerMonster.attack(Jack);
 					eAttackDMG = Jack.attack(playerMonster);
@@ -327,7 +345,6 @@ public void start(Stage primaryStage) throws Exception {
 					}
 				}catch(Exception e1) {
 					System.out.println("Stop spamming!");
->>>>>>> 372da086654c67321c5d43b90d60a60dbb0e1299
 				}
 				
 			});
@@ -344,10 +361,180 @@ public void start(Stage primaryStage) throws Exception {
 
 ////////////////////////////////////////////////////////////////Battle 2////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			Pane b2p = new Pane();
+			
+		
+			b2p.setStyle("-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #dc143c, #661a33)");
+			VBox b2vbox = new VBox(50);
+			b2vbox.setAlignment(Pos.CENTER);
+			VBox b2vbox1 = new VBox(50);
+			b2vbox1.setAlignment(Pos.CENTER);
+			HBox b2hbox = new HBox(50);
+			Text TrainerName2 = new Text("Teddy");
+			Image playerMon1 = new Image("https://i.ytimg.com/vi/8i41YRX5k5g/maxresdefault.jpg"); //hardcoded image until later
+			ImageView viewPlayer1 = new ImageView(playerMon1);
+			
+			viewPlayer1.setPreserveRatio(true);
+			viewPlayer1.setFitHeight(300);
+			viewPlayer1.setFitWidth(300);
+			Image b1monster2 = new Image("https://www.boston.com/wp-content/uploads/2014/04/05212011_0521oped_goose_jpg-7937585-800x478.jpg");  //made enemy always have a goose
+			ImageView monsterb2 = new ImageView(b1monster2);
+			monsterb2.setPreserveRatio(true);
+			monsterb2.setFitHeight(300);
+			monsterb2.setFitWidth(300);
+			Button atk2 = new Button("Attack");
+			Button returnBtn2 = new Button("Leave");
+			
+			//Rectangle healthbar = new Rectangle (100, 50);
+			
+			Text healthb2 = new Text("Health: ");
+			Rectangle healthbarb2 = new Rectangle();
+			healthbarb2.setWidth(100); //enemy health bar
+			healthbarb2.setHeight(15);
+			HBox hboxb2 = new HBox();
+			hboxb2.setAlignment(Pos.CENTER);
+			hboxb2.setPadding(new Insets(15));
+			hboxb2.setSpacing(10);
+			hboxb2.getChildren().addAll(healthb2, healthbarb2);
+
+			Text phealthb2 = new Text("Health: ");
+			Rectangle phealthbarb2 = new Rectangle();
+			phealthbarb2.setWidth(100); //player health bar
+			phealthbarb2.setHeight(15);
+			HBox hbox4 = new HBox();
+			hbox4.setAlignment(Pos.CENTER);
+			hbox4.setPadding(new Insets(15));
+			hbox4.setSpacing(10);
+			hbox4.getChildren().addAll(phealthb2, phealthbarb2);
+			b2vbox.getChildren().addAll(PlayerName, viewPlayer1, hbox4, atk2);
+			//vbox1.setMargin(TrainerName, new Insets(40, 0, 0, 0));
+			b2vbox1.getChildren().addAll(TrainerName2, monsterb2, hboxb2);
+			b2hbox.getChildren().addAll(b2vbox, b2vbox1);
+			b2p.getChildren().add(b2hbox);
+			
 			Scene battle2 = new Scene(b2p,700,700);
+			
+			
+			
+			atk2.setOnAction(e->{
+				
+						
+					try {
+						attackDMG = playerMonster.attack(Jack);
+						eAttackDMG = DEAD.attack(playerMonster);
+						healthbarb2.setWidth(healthbarb2.getWidth() - attackDMG);   //enemy health bar
+						phealthbarb2.setWidth(phealthbarb2.getWidth() - eAttackDMG); //player health bar shrink
+						if(healthbarb2.getWidth() <= 0) {
+							b2vbox1.getChildren().add(returnBtn2);
+						}else if(healthbarb2.getWidth() <= 0 && healthbarb2.getWidth() > 0) {
+							primaryStage.setScene(endPage);
+						}
+					}catch(Exception e1) {
+						System.out.println("Stop spamming!");
+					}
+					
+				});
+				
+				returnBtn2.setOnAction(e->{
+					map.getChildren().remove(imgView15);
+					primaryStage.setScene(mainMap);
+					playerMonster.levelUP();
+					mainChar.requestFocus();
+					
+				});
+			
+			
+			
+			
+			
+			
+						
+			
+			
+			
 			
 ////////////////////////////////////////////////////////////////Battle 3/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////			
 			Pane b3p = new Pane();
+			
+			b3p.setStyle("-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #dc143c, #661a33)");
+			VBox b3vbox = new VBox(50);
+			b3vbox.setAlignment(Pos.CENTER);
+			VBox b3vbox1 = new VBox(50);
+			b2vbox1.setAlignment(Pos.CENTER);
+			HBox b3hbox = new HBox(50);
+			Text TrainerName3 = new Text("Teddy");
+			Image playerMon2 = new Image("https://i.ytimg.com/vi/8i41YRX5k5g/maxresdefault.jpg"); //hardcoded image until later
+			ImageView viewPlayer2 = new ImageView(playerMon2);
+			
+			viewPlayer2.setPreserveRatio(true);
+			viewPlayer2.setFitHeight(300);
+			viewPlayer2.setFitWidth(300);
+			Image b3monster = new Image("https://www.boston.com/wp-content/uploads/2014/04/05212011_0521oped_goose_jpg-7937585-800x478.jpg");  //made enemy always have a goose
+			ImageView monsterb3 = new ImageView(b3monster);
+			monsterb3.setPreserveRatio(true);
+			monsterb3.setFitHeight(300);
+			monsterb3.setFitWidth(300);
+			Button atk3 = new Button("Attack");
+			Button returnBtn3 = new Button("Leave");
+			
+			//Rectangle healthbar = new Rectangle (100, 50);
+			
+			Text healthb3 = new Text("Health: ");
+			Rectangle healthbarb3 = new Rectangle();
+			healthbarb3.setWidth(100); //enemy health bar
+			healthbarb3.setHeight(15);
+			HBox hboxb3 = new HBox();
+			hboxb3.setAlignment(Pos.CENTER);
+			hboxb3.setPadding(new Insets(15));
+			hboxb3.setSpacing(10);
+			hboxb3.getChildren().addAll(healthb3, healthbarb3);
+
+			Text phealthb3 = new Text("Health: ");
+			Rectangle phealthbarb3 = new Rectangle();
+			phealthbarb3.setWidth(100); //player health bar
+			phealthbarb3.setHeight(15);
+			HBox hbox5 = new HBox();
+			hbox5.setAlignment(Pos.CENTER);
+			hbox5.setPadding(new Insets(15));
+			hbox5.setSpacing(10);
+			hbox5.getChildren().addAll(phealthb3, phealthbarb3);
+			b3vbox.getChildren().addAll(PlayerName, viewPlayer2, hbox5, atk3);
+			//vbox1.setMargin(TrainerName, new Insets(40, 0, 0, 0));
+			b3vbox1.getChildren().addAll(TrainerName2, monsterb3, hboxb3);
+			b3hbox.getChildren().addAll(b3vbox, b3vbox1);
+			b3p.getChildren().add(b3hbox);
+			
+			
+			
+			
+			atk3.setOnAction(e->{
+				
+						
+					try {
+						attackDMG = playerMonster.attack(Steve);
+						eAttackDMG = DEAD.attack(playerMonster);
+						healthbarb3.setWidth(healthbarb3.getWidth() - attackDMG);   //enemy health bar
+						phealthbarb3.setWidth(phealthbarb3.getWidth() - eAttackDMG); //player health bar shrink
+						if(healthbarb3.getWidth() <= 0) {
+							b3vbox1.getChildren().add(returnBtn3);
+						}else if(phealthbarb3.getWidth() <= 0 && healthbarb3.getWidth() > 0) {
+							primaryStage.setScene(endPage1);
+						}
+						
+					}catch(Exception e1) {
+						System.out.println("Stop spamming!");
+					}
+					
+				});
+				
+				returnBtn3.setOnAction(e->{
+					map.getChildren().remove(imgView22);
+					primaryStage.setScene(endPage);
+					playerMonster.levelUP();
+					mainChar.requestFocus();
+					
+				});
+			
+			
 			Scene battle3 = new Scene(b3p,700,700);
 			
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -355,6 +542,18 @@ public void start(Stage primaryStage) throws Exception {
 		primaryStage.setTitle("Fight!");
 		primaryStage.setScene(battle1);
 		});
+		
+		imgView15.setOnMouseClicked(e->{
+			primaryStage.setTitle("Fight!");
+			primaryStage.setScene(battle2);
+			});
+		
+		
+		imgView22.setOnMouseClicked(e->{
+			primaryStage.setTitle("Fight!");
+			primaryStage.setScene(battle3);
+			});
+		
  
 			primaryStage.setScene(mainMap);
 			
@@ -363,11 +562,9 @@ public void start(Stage primaryStage) throws Exception {
 			primaryStage.show();
 
 		
-			imgView8.setOnMouseClicked(e-> primaryStage.setScene(battle1));
-		
-		
  
 	};
+	
 
  
 }
