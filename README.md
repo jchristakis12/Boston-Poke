@@ -9,7 +9,9 @@ We built a game losly based on Pokemon, where there are three different types of
 To have game building experience with object oriented Java and practice with inheritance and polymorphism. Also this will hopefully be entertaining to make and fun to play afterwards.
 
 **How**
-So far we have thought to implement a superclass called Pokemon, where say Water Type and Fire Type classes extend to, and have a second subclass which extends the Pokemon types, such as Squirtle and Charizard.
+We started by developing the monsters. We created a monster superclass that the separate monster classes will extend. The monster class deals with damage calculations, health , and all that fun jazz. We then moved onto creating the different scenes that our game will take place in. The first scene we created was the “gym”. Basically a map with three different trainers available for
+the player to battle. We then created the start screen for players to enter their name and choose their starting
+monsters in. Lastly we worked on each different battle scene.
 
 # **Deliverables**
 1. Game Application
