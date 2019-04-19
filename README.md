@@ -3,7 +3,7 @@
 # **Description**
 
 **What**
-We are trying to build a game with a combat system similar to Pokemon, where there are four different types of attacks and we will include 4+ different types of pokemons to use.
+We built a game losly based on Pokemon, where there are three different types of Pokemon for the user to initially choose from and a map where the user can move around using the keys to battle three diffrent trainers ranging in dificulty. 
 
 **Why**
 To have game building experience with object oriented Java and practice with inheritance and polymorphism. Also this will hopefully be entertaining to make and fun to play afterwards.
@@ -11,7 +11,7 @@ To have game building experience with object oriented Java and practice with inh
 **How**
 So far we have thought to implement a superclass called Pokemon, where say Water Type and Fire Type classes extend to, and have a second subclass which extends the Pokemon types, such as Squirtle and Charizard.
 
-# **Deliverable**
+# **Deliverables**
 1. Game Application
 
 # **Plan**
