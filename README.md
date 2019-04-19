@@ -30,8 +30,8 @@ So far we have thought to implement a superclass called Pokemon, where say Water
 2. Constructed the enemy trainer class
 
 -Week 4 (April 1 - April 5)
-1. Linking all the classes and scenes
-2. Working on the game class and battle scene
+1. Worked on the game class and battle scene
+2. Linked all the classes and scenes
 
 # **Getting Started**
 1. Install:
