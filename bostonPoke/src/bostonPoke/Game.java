@@ -193,12 +193,12 @@ public void start(Stage primaryStage) throws Exception {
 		Button geese = new Button("Geese");
 		//geese.setPrefSize(75, 25);
 		geese.setAlignment(Pos.CENTER);
-		((GridPane) startS).add(geese, 2, 3);
+		((GridPane) startS).add(geese, 1, 4);
 		
 		Button homelessman = new Button("Homeless man");
 		//homelessman.setPrefSize(75, 25);
 		homelessman.setAlignment(Pos.CENTER);
-		((GridPane) startS).add(homelessman, 3, 3);
+		((GridPane) startS).add(homelessman, 1, 5);
 		
 		train.setOnAction(e->{
 		playerMonster = Player.selectMonster(2);
@@ -341,7 +341,7 @@ Scene endPage1 = new Scene(sp1,700,700);
 					if(healthbar.getWidth() <= 0) {
 						b1vbox1.getChildren().add(returnBtn);
 					}else if(healthbar2.getWidth() <= 0 && healthbar.getWidth() > 0) {
-						primaryStage.setScene(endPage);
+						primaryStage.setScene(endPage1);
 					}
 				}catch(Exception e1) {
 					System.out.println("Stop spamming!");
@@ -370,7 +370,7 @@ Scene endPage1 = new Scene(sp1,700,700);
 			b2vbox1.setAlignment(Pos.CENTER);
 			HBox b2hbox = new HBox(50);
 			Text TrainerName2 = new Text("Teddy");
-			Image playerMon1 = new Image("https://i.ytimg.com/vi/8i41YRX5k5g/maxresdefault.jpg"); //hardcoded image until later
+			Image playerMon1 = new Image("https://vignette.wikia.nocookie.net/sonicpokemon/images/8/8c/Ashanime.png/revision/latest?cb=20130107051930"); //hardcoded image until later
 			ImageView viewPlayer1 = new ImageView(playerMon1);
 			
 			viewPlayer1.setPreserveRatio(true);
@@ -419,14 +419,14 @@ Scene endPage1 = new Scene(sp1,700,700);
 				
 						
 					try {
-						attackDMG = playerMonster.attack(Jack);
+						attackDMG = playerMonster.attack(DEAD);
 						eAttackDMG = DEAD.attack(playerMonster);
 						healthbarb2.setWidth(healthbarb2.getWidth() - attackDMG);   //enemy health bar
 						phealthbarb2.setWidth(phealthbarb2.getWidth() - eAttackDMG); //player health bar shrink
 						if(healthbarb2.getWidth() <= 0) {
 							b2vbox1.getChildren().add(returnBtn2);
-						}else if(healthbarb2.getWidth() <= 0 && healthbarb2.getWidth() > 0) {
-							primaryStage.setScene(endPage);
+						}else if(phealthbarb2.getWidth() <= 0 && healthbarb2.getWidth() > 0) {
+							primaryStage.setScene(endPage1);
 						}
 					}catch(Exception e1) {
 						System.out.println("Stop spamming!");
@@ -511,7 +511,7 @@ Scene endPage1 = new Scene(sp1,700,700);
 						
 					try {
 						attackDMG = playerMonster.attack(Steve);
-						eAttackDMG = DEAD.attack(playerMonster);
+						eAttackDMG = Steve.attack(playerMonster);
 						healthbarb3.setWidth(healthbarb3.getWidth() - attackDMG);   //enemy health bar
 						phealthbarb3.setWidth(phealthbarb3.getWidth() - eAttackDMG); //player health bar shrink
 						if(healthbarb3.getWidth() <= 0) {

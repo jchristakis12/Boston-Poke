@@ -37,14 +37,13 @@ public class Start extends Application {
 		GridPane p = new GridPane();
 		//p.setGridLinesVisible(true);
 		p.setAlignment(Pos.CENTER);
-		p.setPrefSize(500, 400);
+		p.setPrefSize(600, 500);
 		p.setHgap(10);
 		p.setVgap(10);
 		p.setPadding(new Insets(5));
 
-		
-		
-		HBox hbox = new HBox(10);
+		/*
+		 * HBox hbox = new HBox(10);
 		hbox.setPrefSize(200, 200);
 		
 		VBox vbox = new VBox(20);
@@ -55,6 +54,9 @@ public class Start extends Application {
 		vbox1.setLayoutX(200);
 		vbox1.setLayoutY(200);
 		
+		 */
+		
+		
 		Text Welcome =  new Text("Welcome");
 		Welcome.setFont(Font.font("Verdana", 45));
 		
@@ -62,7 +64,7 @@ public class Start extends Application {
 		
 
 		Welcome.setFont(Font.font("Tahoma", 32));
-		p.add(Welcome, 100, 0);
+		p.add(Welcome, 1, 0);
 
 		
 	//	p.add(Welcome, 0, 0, 3, 1);
