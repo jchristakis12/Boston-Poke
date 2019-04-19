@@ -59,7 +59,7 @@ So far we have thought to implement a superclass called Pokemon, where say Water
 7. If the user beats the final boss they will be shown a colorful "you win" end screen
 
 # **Demo Video**
-INSERT LINK HERE
+https://www.youtube.com/watch?v=J2xK-EJuCxg
 
 # **Team Members**
 Joey Christakis Sid Men Frankie Guarino
