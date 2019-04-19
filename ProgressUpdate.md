@@ -13,8 +13,7 @@
 
 ### Any blocking issues/challenges need to be addressed?
 * Meetup-times need to be more routine
-* Figure out how to 
-
+* Figure out how to push properly 
 
 ## Week 2 (March 18 - March 22)
 
