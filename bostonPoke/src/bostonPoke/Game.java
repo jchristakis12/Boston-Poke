@@ -287,18 +287,12 @@ Scene endPage1 = new Scene(sp1,700,700);
 			
 
 			
-				Image playerMon = new Image("https://vignette.wikia.nocookie.net/sonicpokemon/images/8/8c/Ashanime.png/revision/latest?cb=20130107051930"); 
+				Image playerMon = new Image("https://vignette.wikia.nocookie.net/pokemon/images/7/7a/VS_Red_SM.png/revision/latest?cb=20170101032644"); 
 				ImageView viewPlayer = new ImageView(playerMon);
 				viewPlayer.setPreserveRatio(true);
 				viewPlayer.setFitHeight(300);
 				viewPlayer.setFitWidth(300);
 				b1vbox.getChildren().add(viewPlayer);
-			
-			
-			
-			
-			///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 			
 			
 			Image b1monster = new Image("https://www.boston.com/wp-content/uploads/2014/04/05212011_0521oped_goose_jpg-7937585-800x478.jpg");
@@ -349,7 +343,7 @@ Scene endPage1 = new Scene(sp1,700,700);
 					attackDMG = playerMonster.attack(Jack);
 					eAttackDMG = Jack.attack(playerMonster);
 					healthbar.setWidth(healthbar.getWidth() - attackDMG);
-					healthbar2.setWidth(healthbar2.getWidth() - eAttackDMG);
+					healthbar2.setWidth(healthbar2.getWidth() - eAttackDMG + 5 );
 					if(healthbar.getWidth() <= 0) {
 						b1vbox1.getChildren().add(returnBtn);
 					}else if(healthbar2.getWidth() <= 0 && healthbar.getWidth() > 0) {
@@ -374,6 +368,9 @@ Scene endPage1 = new Scene(sp1,700,700);
 ////////////////////////////////////////////////////////////////Battle 2////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			Pane b2p = new Pane();
 			
+			DEAD.levelUP();
+			
+			
 		
 			b2p.setStyle("-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #dc143c, #661a33)");
 			VBox b2vbox = new VBox(50);
@@ -381,14 +378,14 @@ Scene endPage1 = new Scene(sp1,700,700);
 			VBox b2vbox1 = new VBox(50);
 			b2vbox1.setAlignment(Pos.CENTER);
 			HBox b2hbox = new HBox(50);
-			Text TrainerName2 = new Text("Teddy");
-			Image playerMon1 = new Image("https://vignette.wikia.nocookie.net/sonicpokemon/images/8/8c/Ashanime.png/revision/latest?cb=20130107051930"); //hardcoded image until later
+			Text TrainerName2 = new Text("Mongoose");
+			Image playerMon1 = new Image("https://vignette.wikia.nocookie.net/pokemon/images/7/7a/VS_Red_SM.png/revision/latest?cb=20170101032644"); //hardcoded image until later
 			ImageView viewPlayer1 = new ImageView(playerMon1);
 			
 			viewPlayer1.setPreserveRatio(true);
 			viewPlayer1.setFitHeight(300);
 			viewPlayer1.setFitWidth(300);
-			Image b1monster2 = new Image("https://i.iheart.com/v3/re/new_assets/6e68db3c-ce94-4857-a8ff-6d4213eccc99?ops=max(650,0),quality(80)");  //made enemy always have a goose
+			Image b1monster2 = new Image("https://cdn20.patchcdn.com/users/22926785/20180524/112313/styles/T800x600/public/processed_images/greenlinenew_courtesy-1527175348-5740.jpg");  //made enemy always have a goose
 			ImageView monsterb2 = new ImageView(b1monster2);
 			monsterb2.setPreserveRatio(true);
 			monsterb2.setFitHeight(300);
@@ -434,7 +431,7 @@ Scene endPage1 = new Scene(sp1,700,700);
 						attackDMG = playerMonster.attack(DEAD);
 						eAttackDMG = DEAD.attack(playerMonster);
 						healthbarb2.setWidth(healthbarb2.getWidth() - attackDMG);   //enemy health bar
-						phealthbarb2.setWidth(phealthbarb2.getWidth() - eAttackDMG); //player health bar shrink
+						phealthbarb2.setWidth(phealthbarb2.getWidth() - eAttackDMG + 7); //player health bar shrink
 						if(healthbarb2.getWidth() <= 0) {
 							b2vbox1.getChildren().add(returnBtn2);
 						}else if(phealthbarb2.getWidth() <= 0 && healthbarb2.getWidth() > 0) {
@@ -467,20 +464,24 @@ Scene endPage1 = new Scene(sp1,700,700);
 ////////////////////////////////////////////////////////////////Battle 3/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////			
 			Pane b3p = new Pane();
 			
+			Steve.levelUP();
+			Steve.levelUP();
+			
+			
 			b3p.setStyle("-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #dc143c, #661a33)");
 			VBox b3vbox = new VBox(50);
 			b3vbox.setAlignment(Pos.CENTER);
 			VBox b3vbox1 = new VBox(50);
 			b2vbox1.setAlignment(Pos.CENTER);
 			HBox b3hbox = new HBox(50);
-			Text TrainerName3 = new Text("Teddy");
-			Image playerMon2 = new Image("https://vignette.wikia.nocookie.net/sonicpokemon/images/8/8c/Ashanime.png/revision/latest?cb=20130107051930"); //hardcoded image until later
+			Text TrainerName3 = new Text("Steggman");
+			Image playerMon2 = new Image("https://vignette.wikia.nocookie.net/pokemon/images/7/7a/VS_Red_SM.png/revision/latest?cb=20170101032644"); //hardcoded image until later
 			ImageView viewPlayer2 = new ImageView(playerMon2);
 			
 			viewPlayer2.setPreserveRatio(true);
 			viewPlayer2.setFitHeight(300);
 			viewPlayer2.setFitWidth(300);
-			Image b3monster = new Image("https://www.boston.com/wp-content/uploads/2014/04/05212011_0521oped_goose_jpg-7937585-800x478.jpg");  //made enemy always have a goose
+			Image b3monster = new Image("https://c8.alamy.com/comp/BBK8W7/close-up-portrait-of-a-homeless-guy-with-a-cigarette-on-his-nose-brixton-BBK8W7.jpg");  //homeless
 			ImageView monsterb3 = new ImageView(b3monster);
 			monsterb3.setPreserveRatio(true);
 			monsterb3.setFitHeight(300);
@@ -525,7 +526,7 @@ Scene endPage1 = new Scene(sp1,700,700);
 						attackDMG = playerMonster.attack(Steve);
 						eAttackDMG = Steve.attack(playerMonster);
 						healthbarb3.setWidth(healthbarb3.getWidth() - attackDMG);   //enemy health bar
-						phealthbarb3.setWidth(phealthbarb3.getWidth() - eAttackDMG); //player health bar shrink
+						phealthbarb3.setWidth(phealthbarb3.getWidth() - eAttackDMG + 5); //player health bar shrink
 						if(healthbarb3.getWidth() <= 0) {
 							b3vbox1.getChildren().add(returnBtn3);
 						}else if(phealthbarb3.getWidth() <= 0 && healthbarb3.getWidth() > 0) {
