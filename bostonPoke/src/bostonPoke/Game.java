@@ -48,7 +48,6 @@ public class Game extends Application{
 	static ImageView pV;//shows
 	static Rectangle pHealth;//shows
 	
-	
 	 ImageView showcased;//shows
 	static Rectangle eHealth;
 	static int attackDMG = 10;
@@ -110,6 +109,7 @@ public void start(Stage primaryStage) throws Exception {
 		Geese Jack = new Geese();
 		GreenLine DEAD = new GreenLine();
 		HomelessMan Steve = new HomelessMan();
+		int x = 0;
    
 /////////Creates the character image and inserts it into the map and handles user input to move the image around/////////////// 
 		Image character = new Image("https://vignette.wikia.nocookie.net/pokemon/images/7/7a/VS_Red_SM.png/revision/latest?cb=20170101032644");
@@ -283,12 +283,24 @@ Scene endPage1 = new Scene(sp1,700,700);
 			b1vbox1.setAlignment(Pos.CENTER);
 			HBox b1hbox = new HBox(50);
 			Text TrainerName1 = new Text("Teddy");
-			Image playerMon = new Image("https://i.ytimg.com/vi/8i41YRX5k5g/maxresdefault.jpg"); 
-			ImageView viewPlayer = new ImageView(playerMon);
 			
-			viewPlayer.setPreserveRatio(true);
-			viewPlayer.setFitHeight(300);
-			viewPlayer.setFitWidth(300);
+			
+
+			
+				Image playerMon = new Image("https://vignette.wikia.nocookie.net/sonicpokemon/images/8/8c/Ashanime.png/revision/latest?cb=20130107051930"); 
+				ImageView viewPlayer = new ImageView(playerMon);
+				viewPlayer.setPreserveRatio(true);
+				viewPlayer.setFitHeight(300);
+				viewPlayer.setFitWidth(300);
+				b1vbox.getChildren().add(viewPlayer);
+			
+			
+			
+			
+			///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+			
+			
 			Image b1monster = new Image("https://www.boston.com/wp-content/uploads/2014/04/05212011_0521oped_goose_jpg-7937585-800x478.jpg");
 			ImageView monsterb1 = new ImageView(b1monster);
 			monsterb1.setPreserveRatio(true);
@@ -318,7 +330,7 @@ Scene endPage1 = new Scene(sp1,700,700);
 			hbox3.setPadding(new Insets(15));
 			hbox3.setSpacing(10);
 			hbox3.getChildren().addAll(health2, healthbar2);
-			b1vbox.getChildren().addAll(PlayerName, viewPlayer, hbox3, atk);
+			b1vbox.getChildren().addAll(PlayerName, hbox3, atk);
 			//vbox1.setMargin(TrainerName, new Insets(40, 0, 0, 0));
 			b1vbox1.getChildren().addAll(TrainerName1, monsterb1, hbox2);
 			b1hbox.getChildren().addAll(b1vbox, b1vbox1);
@@ -376,7 +388,7 @@ Scene endPage1 = new Scene(sp1,700,700);
 			viewPlayer1.setPreserveRatio(true);
 			viewPlayer1.setFitHeight(300);
 			viewPlayer1.setFitWidth(300);
-			Image b1monster2 = new Image("https://www.boston.com/wp-content/uploads/2014/04/05212011_0521oped_goose_jpg-7937585-800x478.jpg");  //made enemy always have a goose
+			Image b1monster2 = new Image("https://i.iheart.com/v3/re/new_assets/6e68db3c-ce94-4857-a8ff-6d4213eccc99?ops=max(650,0),quality(80)");  //made enemy always have a goose
 			ImageView monsterb2 = new ImageView(b1monster2);
 			monsterb2.setPreserveRatio(true);
 			monsterb2.setFitHeight(300);
@@ -462,7 +474,7 @@ Scene endPage1 = new Scene(sp1,700,700);
 			b2vbox1.setAlignment(Pos.CENTER);
 			HBox b3hbox = new HBox(50);
 			Text TrainerName3 = new Text("Teddy");
-			Image playerMon2 = new Image("https://i.ytimg.com/vi/8i41YRX5k5g/maxresdefault.jpg"); //hardcoded image until later
+			Image playerMon2 = new Image("https://vignette.wikia.nocookie.net/sonicpokemon/images/8/8c/Ashanime.png/revision/latest?cb=20130107051930"); //hardcoded image until later
 			ImageView viewPlayer2 = new ImageView(playerMon2);
 			
 			viewPlayer2.setPreserveRatio(true);
