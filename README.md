@@ -16,10 +16,22 @@ So far we have thought to implement a superclass called Pokemon, where say Water
 2. Documentation
 
 # **Plan**
--Weeks 1-3
+-Weeks 1 (March 11 - March 15)
 1. Psuedocode and Github groundwork 
-2. Optimization 
-3. Further optimization
+2. Designate rolls
+
+-Weeks 2 (March 18 - March 22)
+1. Created UML
+2. Started to create monster and player classes
+3. Started working on the map
+
+-Week 3 (March 23 - March 29)
+1. Progress made on the monster class
+2. Constructed the enemy trainer class
+
+-Week 4 (April 1 - April 5)
+1. Linking all the classes and scenes
+2. Working on the game class and battle scene
 
 # **Getting Started**
 1. Install:
